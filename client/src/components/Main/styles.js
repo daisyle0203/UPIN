@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles"
-import { red } from "@material-ui/core/colors"
+import { blueGrey, red } from "@material-ui/core/colors"
 
 export default makeStyles((theme) => ({
   root: {
@@ -22,4 +22,7 @@ export default makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+  cardContainer: {
+    margin: 0
+  }
 }))
