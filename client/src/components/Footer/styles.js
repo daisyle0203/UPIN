@@ -5,6 +5,9 @@ export default makeStyles((theme) => ({
   footer: {
     backgroundColor: indigo[500],
     padding: theme.spacing(6),
+    position: "relative",
+    bottom: 0,
+    left: 0,
     
   },
 }))
