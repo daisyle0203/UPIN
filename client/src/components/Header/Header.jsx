@@ -9,46 +9,45 @@ function Header() {
   const classes = useStyles()
 
   return (
-    <>
-        {/* Header */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              UPIN
-            </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="textSecondary"
-              paragraph
-            >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justifyContent="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Log In
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Go to Map
-                  </Button>
-                </Grid>
+      <div className={classes.heroContent}>
+        <Container maxWidth="sm">
+          <Typography
+            component="h1"
+            variant="h2"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
+            UPIN
+          </Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            color="textSecondary"
+            paragraph
+          >
+            Welcome to UPIN! Here you can find real reviews from people who
+            have gone through the interview process at various companies. Our
+            goal is to help job seekers make informed decisions by sharing
+            valuable insights and experiences. Thank you for visiting and happy
+            job hunting!
+          </Typography>
+          <div className={classes.heroButtons}>
+            <Grid container spacing={2} justifyContent="center">
+              <Grid item>
+                <Button href="/login" variant="contained" color="primary">
+                  Log In
+                </Button>
               </Grid>
-            </div>
-          </Container>
-        </div>
-    </>
+              <Grid item>
+                <Button href="signup" variant="outlined" color="primary">
+                  Sign up
+                </Button>
+              </Grid>
+            </Grid>
+          </div>
+        </Container>
+      </div>
   )
 }
 

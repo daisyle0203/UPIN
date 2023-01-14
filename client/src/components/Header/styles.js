@@ -1,8 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles"
+import { blue } from "@material-ui/core/colors"
 
 export default makeStyles((theme) => ({
     heroContent: {
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: blue[100],
       padding: theme.spacing(8, 0, 6),
     },
     heroButtons: {
