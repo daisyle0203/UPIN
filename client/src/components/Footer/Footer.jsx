@@ -19,12 +19,9 @@ function Footer() {
   const classes = useStyles()
 
   return (
-    <>
-      {" "}
-      {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          UPIN
         </Typography>
         <Typography
           variant="subtitle1"
@@ -36,8 +33,6 @@ function Footer() {
         </Typography>
         <Copyright />
       </footer>
-      {/* End footer */}
-    </>
   )
 }
 

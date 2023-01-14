@@ -27,7 +27,6 @@ function Main() {
   }
 
   return (
-    <>
       <Container className={classes.cardGrid} maxWidth="md">
         <Grid container spacing={4}>
           {cards.map((card) => (
@@ -91,7 +90,6 @@ function Main() {
           ))}
         </Grid>
       </Container>
-    </>
   )
 }
 

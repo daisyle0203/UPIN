@@ -1,13 +1,11 @@
 import Main from "../../../src/components/Main/Main"
 import Header from "../../../src/components/Header/Header"
-import Footer from "../../../src/components/Footer/Footer"
 
 function Home() {
   return (
-    <>      
-    <Header />
+    <>
+      <Header />
       <Main />
-      <Footer />
     </>
   )
 }
