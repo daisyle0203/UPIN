@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
     heroContent: {
       backgroundColor: blue[100],
       padding: theme.spacing(8, 0, 6),
+      marginTop: 16
     },
     heroButtons: {
       marginTop: theme.spacing(4),
