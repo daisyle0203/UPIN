@@ -22,4 +22,7 @@ export default makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+  cardContainer: {
+    margin: 0
+  }
 }))

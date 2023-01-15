@@ -1,10 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles"
-import { blue } from "@material-ui/core/colors"
+import { blue, amber } from "@material-ui/core/colors"
 
 export default makeStyles((theme) => ({
     heroContent: {
       backgroundColor: blue[100],
       padding: theme.spacing(8, 0, 6),
+      marginTop: 16,
+      borderRadius: theme.shape.borderRadius * 6,
     },
     heroButtons: {
       marginTop: theme.spacing(4),
