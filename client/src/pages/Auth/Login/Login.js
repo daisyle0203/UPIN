@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import { useMutation } from '@apollo/client';
 import Avatar from "@material-ui/core/Avatar"
 import Button from "@material-ui/core/Button"
 import CssBaseline from "@material-ui/core/CssBaseline"
@@ -12,8 +13,11 @@ import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
 import useStyles from "./styles"
 
-export default function LogIn() {
+export default function LogIn() { 
   const classes = useStyles()
+  const [formState, setFormState] = useState({ email: '', password: ''});
+  const [login, { error }] = useMutation()
+
 
   return (
     <Container component="main" maxWidth="xs">
