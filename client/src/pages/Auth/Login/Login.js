@@ -1,5 +1,8 @@
 import React, { useState } from "react"
 import { useMutation } from '@apollo/client';
+import { LOGIN } from '../../../utils/mutations'
+import Auth from '../../../utils/auth';
+
 import Avatar from "@material-ui/core/Avatar"
 import Button from "@material-ui/core/Button"
 import CssBaseline from "@material-ui/core/CssBaseline"
@@ -16,8 +19,28 @@ import useStyles from "./styles"
 export default function LogIn() { 
   const classes = useStyles()
   const [formState, setFormState] = useState({ email: '', password: ''});
-  const [login, { error }] = useMutation()
+  const [login, { error }] = useMutation(LOGIN);
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password},
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -29,7 +52,7 @@ export default function LogIn() {
         <Typography component="h1" variant="h5">
           Log in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form onSubmit={handleFormSubmit} className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -40,6 +63,7 @@ export default function LogIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={handleChange}
           />
           <TextField
             variant="outlined"
@@ -51,6 +75,7 @@ export default function LogIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={handleChange}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
