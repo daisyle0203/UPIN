@@ -67,6 +67,11 @@ input CommentInput {
   date: String!
 }
 
+type Auth {
+  token: ID!
+  user: User
+}
+
 type Query {
   reviews: [Review]
   review(id: ID!): Review
@@ -91,7 +96,8 @@ type Mutation {
   createComment(input: CommentInput): Comment
   updateComment(id: ID!, input: CommentInput): Comment
   deleteComment(id: ID!): Comment
-}
+  login(email: String!, password: String!): Auth
+} 
 
 `
 

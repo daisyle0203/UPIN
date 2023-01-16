@@ -8,7 +8,7 @@ const resolvers = {
       const reviews = await Review.find()
       return reviews
     },
-    review: async (parent, { review }, { Review }) => {
+    review: async (parent, { _id }, { Review }) => {
       const review = await Review.findById(_id)
       return review
     },
@@ -56,11 +56,11 @@ const resolvers = {
       const company = await Company.findByIdAndDelete(id)
       return company
     },
-    addUser: async (parent, { username, email, password }) => {
+    createUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password })
       const token = signToken(user)
       return { token, user }
-    },
+    }, 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email })
 
@@ -78,7 +78,7 @@ const resolvers = {
 
       return { token, user }
     },
-    addComment: async (parent, { comment }, context) => {
+    createComment: async (parent, { comment }, context) => {
       if (context.user) {
         const comment = new Comment({ comment, user: context.user._id })
         await comment.save()
