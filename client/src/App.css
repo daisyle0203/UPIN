@@ -1,3 +1,5 @@
-.content-container {
-    min-height: calc(100vh - 343px);
-}
+body {
+    background-color: #1b1b1b;
+    color: white;
+  }
+  
