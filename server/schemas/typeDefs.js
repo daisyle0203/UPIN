@@ -24,6 +24,7 @@ const typeDefs = gql`
 
   type User {
     _id: ID!
+    username: String!
     email: String!
     password: String!
     reviews: [Review]
@@ -58,7 +59,7 @@ const typeDefs = gql`
   input UserInput {
     email: String!
     password: String!
-  }
+  } 
 
   type Auth {
     token: ID!
