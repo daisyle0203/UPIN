@@ -35,6 +35,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// App setup
 function App() {
   const darkTheme = createTheme({
     palette: {
