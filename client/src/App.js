@@ -37,7 +37,7 @@ function App() {
   const darkTheme = createTheme({
     palette: {
       type: "dark",
-    },
+    }
   });
 
   return (
