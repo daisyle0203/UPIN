@@ -24,12 +24,13 @@ const UserSchema = new Schema(
         ref: "Review",
       },
     ],
-    profilePic: {
-      type: String,
-      default: "",
-    },
+    // profilePic: {
+    //   type: String,
+    //   default: "",
+    // },
   },
   { timestamps: true }
+
 );
 
 // hash user password
