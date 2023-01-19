@@ -1,7 +1,7 @@
-const mongoose = require("mongoose")
-const bcrypt = require('bcrypt')
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
-const UserSchema = new mongoose.Schema(
+const UserSchema = new Schema(
   {
     username: {
       type: String,
@@ -12,6 +12,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
+      match: [/.+@.+\..+/, "Must match an email address!"],
     },
     password: {
       type: String,
@@ -19,7 +20,7 @@ const UserSchema = new mongoose.Schema(
     },
     reviews: [
       {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Review",
       },
     ],
@@ -29,7 +30,9 @@ const UserSchema = new mongoose.Schema(
     // },
   },
   { timestamps: true }
-)
+
+);
+
 // hash user password
 UserSchema.pre("save", async function (next) {
   if (this.isNew || this.isModified("password")) {
@@ -39,10 +42,11 @@ UserSchema.pre("save", async function (next) {
 
   next();
 });
-
 // custom method to compare and validate password for logging in
 UserSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-module.exports = mongoose.model("User", UserSchema)
+const User = model("User", UserSchema);
+
+module.exports = User;
