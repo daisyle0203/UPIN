@@ -8,7 +8,7 @@ const resolvers = {
       const reviews = await Review.find()
       return reviews
     },
-    review: async (parent, { review }, { Review }) => {
+    review: async (parent, { _id }, { Review }) => {
       const review = await Review.findById(_id)
       return review
     },
@@ -30,12 +30,12 @@ const resolvers = {
     },
   },
   Mutation: {
-    createReview: async (parent, { input }) => {
-      const review = new Review(input)
+    createReview: async (parent, { Review }) => {
+      const  review = Review.create()
       await review.save()
       return review
     },
-    updateReview: async (parent, { id, input }) => {
+    updateReview: async (parent, { id }, {Review}) => {
       const review = await Review.findByIdAndUpdate(id, input, { new: true })
       return review
     },
