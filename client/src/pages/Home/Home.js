@@ -5,6 +5,7 @@ import Main from "../../components/Main/Main"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import FeaturedPost from "../../components/FeaturedPost/FeaturedPost"
 import Footer from "../../components/Footer/Footer"
+import Header from "../../components/Header/Header"
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
@@ -16,6 +17,7 @@ function Home() {
 
   return (
     <>
+    <Header />
       <FeaturedPost />
       <br />
       <Grid container spacing={4}>

@@ -3,11 +3,6 @@ const jwt = require("jsonwebtoken");
 const secret = process.env.REACT_APP_JWT_SECRET;
 const expiration = "2h";
 
-// set token secret and expiration date
-const secret = process.env.JWT_SECRET;
-console.log(process.env.JWT_SECRET);
-const expiration = "2h";
-
 module.exports = {
   // function for our authenticated routes
   authMiddleware: function ({ req }) {
