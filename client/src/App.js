@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home"
 import Login from "./pages/Auth/Login/Login"
 import SignUp from "./pages/Auth/SignUp/SignUp"
 
+// App setup
 function App() {
   const darkTheme = createTheme({
     palette: {
