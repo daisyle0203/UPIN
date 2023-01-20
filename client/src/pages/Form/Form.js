@@ -1,8 +1,7 @@
 import React, { useState} from "react"
 import { TextField, Button, Typography, Paper, IconButton } from "@material-ui/core"
 import useStyles from "./styles"
-import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
-import StarPurple500OutlinedIcon from '@mui/icons-material/StarPurple500Outlined';
+import { Rating } from '@mui/material';
 
 
 const handleChange = (event) => {}
@@ -23,6 +22,7 @@ const Form = () => {
   const [clicked, setClicked] = useState();
 
   return (
+    
     <Paper className={classes.paper}>
       <form
         autoComplete="off"
@@ -40,13 +40,21 @@ const Form = () => {
           onChange={handleChange}
         />
         <TextField
-          name="Review"
+          name="Interview Experience"
           variant="outlined"
-          label="Review"
+          label="Interview Experience"
           fullWidth
           multiline
           minRows={4}
-          value="Review"
+          value="Interview Experience"
+          onChange={handleChange}
+        />
+        <TextField
+          name="Role"
+          variant="outlined"
+          label="Role"
+          fullWidth
+          value="Role"
           onChange={handleChange}
         />
         <TextField
@@ -57,21 +65,13 @@ const Form = () => {
           value="Interviewer Info"
           onChange={handleChange}
         />
-        <IconButton onClick={() => setClicked(true)}>
-          {clicked ? <StarPurple500OutlinedIcon /> : <StarBorderOutlinedIcon />}
-        </IconButton>
-        <IconButton onClick={() => setClicked(true)}>
-          {clicked ? <StarPurple500OutlinedIcon /> : <StarBorderOutlinedIcon />}
-        </IconButton>
-        <IconButton onClick={() => setClicked(true)}>
-          {clicked ? <StarPurple500OutlinedIcon /> : <StarBorderOutlinedIcon />}
-        </IconButton>
-        <IconButton onClick={() => setClicked(true)}>
-          {clicked ? <StarPurple500OutlinedIcon /> : <StarBorderOutlinedIcon />}
-        </IconButton>
-        <IconButton onClick={() => setClicked(true)}>
-          {clicked ? <StarPurple500OutlinedIcon /> : <StarBorderOutlinedIcon />}
-        </IconButton>
+        <Rating
+          name='simple-controlled'
+          value={clicked}
+          onChange={(event, newValue) => {
+            setClicked(newValue);
+          }}
+        />
         <Button
           className={classes.buttonSubmit}
           variant="contained"
