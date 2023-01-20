@@ -133,9 +133,8 @@ Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a p
 ]
 
 export const sidebar = {
-  title: "About",
   description:
-    "Welcome to UPIN! Here you can find real reviews from people who have gone through the interview process at various companies. Our goal is to help job seekers make informed decisions by sharing valuable insights and experiences. Thank you for visiting and happy job hunting!",
+    "Please log in to create a review. If you don't have an account, please sign up.",
   archives: [
     { title: "March 2020", url: "#" },
     { title: "February 2020", url: "#" },

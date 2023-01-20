@@ -6,4 +6,12 @@ export default makeStyles((theme) => ({
     marginTop: theme.spacing(4),
     padding: theme.spacing(6, 0),
   },
+  links: {
+    color: 'white',
+    textDecoration: 'none',
+    '&:hover': {
+      color: '#ffc107',
+    },
+    marginLeft: '15px',
+  },
 }))

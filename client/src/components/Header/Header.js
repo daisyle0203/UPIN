@@ -35,18 +35,21 @@ function Header() {
           <AccountCircle />
         </IconButton>
         <Button href="/login" variant="contained" color="primary">
-                  Log In
-                </Button>
-                <Button href="signup" variant="outlined" color="primary" style={{ marginLeft: "10px"}}>
-                  Sign up
-                </Button>
+          Log In
+        </Button>
+        <Button
+          href="signup"
+          variant="outlined"
+          color="primary"
+          style={{ marginLeft: "10px" }}
+        >
+          Sign up
+        </Button>
       </Toolbar>
 
       <Divider />
 
-      <Toolbar className={classes.tagline}>
-        INTERVIEW INSIGHT PLATFORM
-      </Toolbar>
+      <Toolbar className={classes.tagline}>INTERVIEW INSIGHT PLATFORM</Toolbar>
     </>
   )
 }

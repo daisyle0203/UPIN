@@ -3,7 +3,7 @@ import PostCard from "../../../src/components/PostCard/PostCard"
 import { featuredPosts, sidebar } from "../../Data/Data"
 import Main from "../../components/Main/Main"
 import Sidebar from "../../components/Sidebar/Sidebar"
-import FeaturedPost from "../../components/FeaturedPost/FeaturedPost"
+import FeaturedPost from "../../components/Intro/Intro"
 import Footer from "../../components/Footer/Footer"
 import Header from "../../components/Header/Header"
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +36,7 @@ function Home() {
       </Grid>
       <Footer
         title="UPIN"
-        description="Something here to give the footer a purpose!"
+        description="Checkout our social media pages"
       />
     </>
   )
