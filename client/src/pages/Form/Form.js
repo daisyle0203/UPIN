@@ -10,12 +10,6 @@ const handleFormSubmit = async (event) => {}
 
 const handleClear = () => {}
 
-const starFill = () => {
-  console.log("Boom!")
-}
-
-
-
 const Form = () => {
   const classes = useStyles()
 
