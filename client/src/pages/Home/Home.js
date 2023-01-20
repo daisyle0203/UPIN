@@ -17,7 +17,7 @@ function Home() {
 
   return (
     <>
-    <Header />
+      <Header />
       <FeaturedPost />
       <br />
       <Grid container spacing={4}>
@@ -34,10 +34,7 @@ function Home() {
           social={sidebar.social}
         />
       </Grid>
-      <Footer
-        title="UPIN"
-        description="Checkout our social media pages"
-      />
+      <Footer title="RE:VIEW" description="Checkout our social media pages" />
     </>
   )
 }

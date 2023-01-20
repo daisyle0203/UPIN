@@ -7,7 +7,7 @@ const handleChange = (event) => {}
 const handleFormSubmit = async (event) => {}
 
 const handleClear = () => {}
-
+// Get the current id
 const Form = () => {
   const classes = useStyles()
 
@@ -19,31 +19,31 @@ const Form = () => {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleFormSubmit}
       >
-        <Typography variant="h5">Create a Review</Typography>
+        <Typography variant="h6">Create a Post</Typography>
         <TextField
-          name="company name"
+          name="title"
           variant="outlined"
-          label="Company Name"
+          label="Title"
           fullWidth
-          value="Company Name"
+          value="title"
           onChange={handleChange}
         />
         <TextField
-          name="Review"
+          name="message"
           variant="outlined"
-          label="Review"
+          label="Message"
           fullWidth
           multiline
           minRows={4}
-          value="Review"
+          value="message"
           onChange={handleChange}
         />
         <TextField
-          name="Interviewer Info"
+          name="tags"
           variant="outlined"
-          label="Interviewer Info"
+          label="Tags (coma separated)"
           fullWidth
-          value="Interviewer Info"
+          value="tags"
           onChange={handleChange}
         />
         <Button
@@ -59,7 +59,7 @@ const Form = () => {
         <Button
           variant="contained"
           color="secondary"
-          size="large"
+          size="small"
           onClick={handleClear}
           fullWidth
         >

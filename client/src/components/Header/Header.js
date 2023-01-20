@@ -24,7 +24,7 @@ function Header() {
           </IconButton>
         </SideDrawer>
         <Typography variant="h6" className={classes.title}>
-          UPIN
+          RE:VIEW
         </Typography>
         <IconButton color="inherit">
           <Badge badgeContent={4} color="secondary">
