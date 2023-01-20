@@ -15,9 +15,9 @@
 - [License](#license)
 
 ## Installation 
+
 - Clone the repository.
 - In the root directory, run NPM install.
-- Once completed run NPM start
 
 ## Usage
 
