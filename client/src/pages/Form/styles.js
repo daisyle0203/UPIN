@@ -22,4 +22,7 @@ export default makeStyles((theme) => ({
   buttonSubmit: {
     marginBottom: 10,
   },
+  rating: {
+    marginBottom: 10,
+  }
 }))

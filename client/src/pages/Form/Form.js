@@ -1,6 +1,8 @@
-import React from "react"
-import { TextField, Button, Typography, Paper } from "@material-ui/core"
+import React, { useState} from "react"
+import { TextField, Button, Typography, Paper, IconButton } from "@material-ui/core"
 import useStyles from "./styles"
+import { Rating } from '@mui/material';
+
 
 const handleChange = (event) => {}
 
@@ -11,7 +13,10 @@ const handleClear = () => {}
 const Form = () => {
   const classes = useStyles()
 
+  const [clicked, setClicked] = useState();
+
   return (
+    
     <Paper className={classes.paper}>
       <form
         autoComplete="off"
@@ -29,13 +34,21 @@ const Form = () => {
           onChange={handleChange}
         />
         <TextField
-          name="Review"
+          name="Interview Experience"
           variant="outlined"
-          label="Review"
+          label="Interview Experience"
           fullWidth
           multiline
           minRows={4}
-          value="Review"
+          value="Interview Experience"
+          onChange={handleChange}
+        />
+        <TextField
+          name="Role"
+          variant="outlined"
+          label="Role"
+          fullWidth
+          value="Role"
           onChange={handleChange}
         />
         <TextField
@@ -45,6 +58,16 @@ const Form = () => {
           fullWidth
           value="Interviewer Info"
           onChange={handleChange}
+        />
+        <Rating
+          name='simple-controlled'
+          precision={0.5}
+          value={clicked}
+          onChange={(event, newValue) => {
+            setClicked(newValue);
+          }}
+          size='large'
+          className={classes.rating}
         />
         <Button
           className={classes.buttonSubmit}
