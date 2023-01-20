@@ -1,17 +1,22 @@
-import React from "react"
-import { TextField, Button, Typography, Paper } from "@material-ui/core"
+import React, { useState} from "react"
+import { TextField, Button, Typography, Paper} from "@material-ui/core"
 import useStyles from "./styles"
+import Rating from '@material-ui/lab/Rating'
+
 
 const handleChange = (event) => {}
 
 const handleFormSubmit = async (event) => {}
 
 const handleClear = () => {}
-// Get the current id
+
 const Form = () => {
   const classes = useStyles()
 
+  const [clicked, setClicked] = useState();
+
   return (
+    
     <Paper className={classes.paper}>
       <form
         autoComplete="off"
@@ -19,32 +24,50 @@ const Form = () => {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleFormSubmit}
       >
-        <Typography variant="h6">Create a Post</Typography>
+        <Typography variant="h5">Create a Review</Typography>
         <TextField
-          name="title"
+          name="company name"
           variant="outlined"
-          label="Title"
+          label="Company Name"
           fullWidth
-          value="title"
+          value="Company Name"
           onChange={handleChange}
         />
         <TextField
-          name="message"
+          name="Interview Experience"
           variant="outlined"
-          label="Message"
+          label="Interview Experience"
           fullWidth
           multiline
           minRows={4}
-          value="message"
+          value="Interview Experience"
           onChange={handleChange}
         />
         <TextField
-          name="tags"
+          name="Role"
           variant="outlined"
-          label="Tags (coma separated)"
+          label="Role"
           fullWidth
-          value="tags"
+          value="Role"
           onChange={handleChange}
+        />
+        <TextField
+          name="Interviewer Info"
+          variant="outlined"
+          label="Interviewer Info"
+          fullWidth
+          value="Interviewer Info"
+          onChange={handleChange}
+        />
+        <Rating
+          name='simple-controlled'
+          precision={0.5}
+          value={clicked}
+          onChange={(event, newValue) => {
+            setClicked(newValue);
+          }}
+          size='large'
+          className={classes.rating}
         />
         <Button
           className={classes.buttonSubmit}
@@ -59,7 +82,7 @@ const Form = () => {
         <Button
           variant="contained"
           color="secondary"
-          size="small"
+          size="large"
           onClick={handleClear}
           fullWidth
         >
