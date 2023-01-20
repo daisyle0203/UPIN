@@ -15,17 +15,18 @@ const FeaturedPost = () => {
     <Card className={classes.cover}>
       <CardContent className={classes.textContainer}>
         <Typography className={classes.title} gutterBottom>
-          Title of a longer featured blog post
+          Welcome to UPIN!
         </Typography>
         <Typography variant="h5" component="h2">
-          Multiple lines of text that form the lede, informing new readers
-          quickly and efficiently about what's most interesting in this post's
-          contents.
+          Here you can find real reviews from people who have gone through the
+          interview process at various companies. Our goal is to help job
+          seekers make informed decisions by sharing valuable insights and
+          experiences. Thank you for visiting and happy job hunting!
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="text" style={{ color: "#90caf9", fontWeight: 700 }}>
-          Read More..
+        <Button href="/dashboard" variant="contained" color="secondary">
+          Create A Review
         </Button>
       </CardActions>
     </Card>
