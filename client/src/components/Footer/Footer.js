@@ -13,7 +13,7 @@ export default function Footer({ description, title }) {
 
   return (
     <footer className={classes.footer}>
-      <Container maxWidth="lg" >
+      <Container maxWidth="lg">
         <Typography variant="h6" align="center" gutterBottom>
           {title}
         </Typography>
@@ -26,28 +26,37 @@ export default function Footer({ description, title }) {
           {description}
         </Typography>
         <Grid item xs={12}>
-            <Grid container justifyContent="center">
-              <Grid item>
-                <Link to="https://www.linkedin.com/company/your-company" className={classes.links}>
-                  <LinkedInIcon fontSize='medium'/>
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link to="https://github.com/your-username" className={classes.links}>
-                  <GitHubIcon fontSize='medium'/>
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link to="https://twitter.com/your-username" className={classes.links}>
-                  <TwitterIcon fontSize='medium'/>
-                </Link>
-              </Grid>
+          <Grid container justifyContent="center">
+            <Grid item>
+              <Link
+                to="https://www.linkedin.com/company/your-company"
+                className={classes.links}
+              >
+                <LinkedInIcon fontSize="medium" />
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link
+                to="https://github.com/your-username"
+                className={classes.links}
+              >
+                <GitHubIcon fontSize="medium" />
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link
+                to="https://twitter.com/your-username"
+                className={classes.links}
+              >
+                <TwitterIcon fontSize="medium" />
+              </Link>
             </Grid>
           </Grid>
+        </Grid>
         <Typography variant="body2" color="textSecondary" align="center">
           Copyright ©{" "}
           <Link color="inherit" href="#">
-          UPIN All Rights Reserved.
+            RE:VIEW All Rights Reserved.
           </Link>{" "}
           {new Date().getFullYear()}.
         </Typography>

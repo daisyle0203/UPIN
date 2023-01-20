@@ -24,10 +24,7 @@ const UserSchema = new Schema(
         ref: "Review",
       },
     ],
-    // profilePic: {
-    //   type: String,
-    //   default: "",
-    // },
+  
   },
   { timestamps: true }
 

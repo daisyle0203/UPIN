@@ -15,7 +15,7 @@ const FeaturedPost = () => {
     <Card className={classes.cover}>
       <CardContent className={classes.textContainer}>
         <Typography className={classes.title} gutterBottom>
-          Welcome to UPIN!
+          Welcome to RE:VIEW!
         </Typography>
         <Typography variant="h5" component="h2">
           Here you can find real reviews from people who have gone through the
