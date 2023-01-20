@@ -67,10 +67,13 @@ const Form = () => {
         />
         <Rating
           name='simple-controlled'
+          precision={0.5}
           value={clicked}
           onChange={(event, newValue) => {
             setClicked(newValue);
           }}
+          size='large'
+          className={classes.rating}
         />
         <Button
           className={classes.buttonSubmit}
