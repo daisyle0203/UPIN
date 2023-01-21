@@ -1,15 +1,8 @@
-import {
-  Badge,
-  Divider,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@material-ui/core"
+import { Divider, IconButton, Toolbar, Typography } from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
-import { AccountCircle } from "@material-ui/icons"
-import NotificationsIcon from "@material-ui/icons/Notifications"
 import SideDrawer from "../SideDrawer/SideDrawer"
 import Button from "@material-ui/core/Button"
+import FindReplaceIcon from "@material-ui/icons/FindReplace"
 import useStyles from "./styles"
 
 function Header() {
@@ -24,16 +17,9 @@ function Header() {
           </IconButton>
         </SideDrawer>
         <Typography variant="h6" className={classes.title}>
-          RE:VIEW
+          <FindReplaceIcon />
+          Re:View
         </Typography>
-        <IconButton color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <IconButton color="inherit">
-          <AccountCircle />
-        </IconButton>
         <Button href="/login" variant="contained" color="primary">
           Log In
         </Button>
@@ -46,9 +32,7 @@ function Header() {
           Sign up
         </Button>
       </Toolbar>
-
       <Divider />
-
       <Toolbar className={classes.tagline}>INTERVIEW INSIGHT PLATFORM</Toolbar>
     </>
   )

@@ -13,6 +13,8 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Auth/Login/Login";
 import SignUp from "./pages/Auth/SignUp/SignUp";
 import Form from "./pages/Form/Form";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -44,6 +46,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={darkTheme}>
+        <Header />
       <Container>
         <Router>
               <Routes>
@@ -54,6 +57,7 @@ function App() {
               </Routes>
         </Router>
         </Container>
+        <Footer />
         </ThemeProvider>
     </ApolloProvider>
   );

@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid"
 import GitHubIcon from "@material-ui/icons/GitHub"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import TwitterIcon from "@material-ui/icons/Twitter"
+import FindReplaceIcon from "@material-ui/icons/FindReplace"
 import useStyles from "./styles"
 
 export default function Footer({ description, title }) {
@@ -15,7 +16,8 @@ export default function Footer({ description, title }) {
     <footer className={classes.footer}>
       <Container maxWidth="lg">
         <Typography variant="h6" align="center" gutterBottom>
-          {title}
+        <FindReplaceIcon />
+          Re:View
         </Typography>
         <Typography
           variant="subtitle1"
@@ -23,7 +25,7 @@ export default function Footer({ description, title }) {
           color="textSecondary"
           component="p"
         >
-          {description}
+          Checkout our social media pages
         </Typography>
         <Grid item xs={12}>
           <Grid container justifyContent="center">
@@ -56,7 +58,7 @@ export default function Footer({ description, title }) {
         <Typography variant="body2" color="textSecondary" align="center">
           Copyright ©{" "}
           <Link color="inherit" href="#">
-            RE:VIEW All Rights Reserved.
+            Re:View All Rights Reserved.
           </Link>{" "}
           {new Date().getFullYear()}.
         </Typography>

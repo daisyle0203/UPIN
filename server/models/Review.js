@@ -19,9 +19,10 @@ const reviewSchema = new mongoose.Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
+  company: String,
   role: String,
   interviewerInfo: String,
-  overallExperience: Number,
+  rating: Number,
   comments: [
     {
       commentText: {
@@ -41,7 +42,6 @@ const reviewSchema = new mongoose.Schema({
       },
     },
   ],
-   company: { type: mongoose.Schema.Types.ObjectId, ref: "Company" },
 })
 
 module.exports = mongoose.model("Review", reviewSchema)
