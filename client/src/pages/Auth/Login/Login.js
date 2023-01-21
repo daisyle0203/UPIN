@@ -18,7 +18,7 @@ import useStyles from "./styles";
 export default function LogIn() {
   const classes = useStyles();
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -50,6 +50,7 @@ export default function LogIn() {
   };
 
   return (
+    <>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -108,5 +109,6 @@ export default function LogIn() {
         {error &&(<Typography variant="body2" className={classes.customError}>{error.message}</Typography>)}
       </div>
     </Container>
+    </>
   );
 }

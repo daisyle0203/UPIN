@@ -7,10 +7,16 @@ import Divider from "@material-ui/core/Divider"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
-import InboxIcon from "@material-ui/icons/MoveToInbox"
+import HomeIcon from '@material-ui/icons/Home';
 import MailIcon from "@material-ui/icons/Mail"
-import { sections } from "../../Data/Data"
 import useStyles from "./styles"
+
+const sections = [
+  { title: "Home", url: "/" },
+  { title: "Dashboard", url: "/dashboard" },
+  { title: "Login", url: "/login" },
+  { title: "Signup", url: "/signup" },
+]
 
 export default function TemporaryDrawer({ children }) {
   const classes = useStyles()
@@ -37,14 +43,14 @@ export default function TemporaryDrawer({ children }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItem>Categories</ListItem>
+        <ListItem>Pages</ListItem>
       </List>
       <Divider />
       <List>
         {sections.map((text, index) => (
           <ListItem button key={text.title}>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              {index % 2 === 0 ? <HomeIcon /> : <MailIcon />}
             </ListItemIcon>
             <ListItemText primary={text.title} />
           </ListItem>
