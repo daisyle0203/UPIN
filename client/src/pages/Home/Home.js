@@ -16,6 +16,7 @@ function Home() {
           align="center"
           color="textPrimary"
           gutterBottom
+          style={{ marginTop: "65px" }}
         >
           Welcome to Re:View!
         </Typography>

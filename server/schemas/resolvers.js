@@ -10,10 +10,13 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate("reviews")
     },
-    reviews: async (parent, { username }) => {
-      const params = username ? { username } : {}
-      return Review.find(params).sort({ createdAt: -1 })
-    },
+    reviews: async () => {
+      try {
+        const reviews = await Review.find().populate("comments").sort({ createdAt: -1 })
+        return reviews
+      } catch (error) {
+        console.log(error)
+      }},
     review: async (parent, { reviewId }) => {
       return Review.findOne({ _id: reviewId })
     },
@@ -62,10 +65,14 @@ const resolvers = {
         console.log(err)
       }
     },
-    addReview: async (parent, { interviewExperience }, context) => {
+    addReview: async (parent, { company, interviewExperience, role, interviewerInfo, rating }, context) => {
       if (context.user) {
         const review = await Review.create({
+          company,
           interviewExperience,
+          role,
+          interviewerInfo,
+          rating,
           reviewAuthor: context.user.username,
         })
 
