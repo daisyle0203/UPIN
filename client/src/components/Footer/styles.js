@@ -4,17 +4,16 @@ export default makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.primary.blue,
     padding: theme.spacing(3, 0),
-    position: 'fixed',
+    position: "fixed",
     bottom: 0,
-    width: '100%',
-  
+    width: "100%",
   },
   links: {
-    color: 'white',
-    textDecoration: 'none',
-    '&:hover': {
-      color: '#ffc107',
+    color: "white",
+    textDecoration: "none",
+    "&:hover": {
+      color: "#ffc107",
     },
-    marginLeft: '15px',
+    marginLeft: "15px",
   },
 }))

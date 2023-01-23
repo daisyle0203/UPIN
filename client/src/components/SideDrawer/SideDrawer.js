@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import clsx from "clsx"
 import { Assignment, Group, Home } from "@material-ui/icons"
 import ChatIcon from "@material-ui/icons/Chat"
@@ -16,7 +16,6 @@ import useStyles from "./styles"
 export default function SideDrawer({ children }) {
   const classes = useStyles()
   const [state, setState] = React.useState({ left: false })
-  const [mode, setMode] = useState("light")
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (

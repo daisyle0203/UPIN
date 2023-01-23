@@ -13,6 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
+import Paper from "@material-ui/core/Paper";
 import useStyles from "./styles";
 
 export default function LogIn() {
@@ -53,7 +54,7 @@ export default function LogIn() {
     <>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
-      <div className={classes.paper}>
+      <Paper className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
@@ -107,7 +108,7 @@ export default function LogIn() {
           </Grid>
         </form>
         {error &&(<Typography variant="body2" className={classes.customError}>{error.message}</Typography>)}
-      </div>
+      </Paper>
     </Container>
     </>
   );
