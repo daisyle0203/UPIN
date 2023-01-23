@@ -1,26 +1,22 @@
-import React from "react"
+import React, { useState } from "react"
 import clsx from "clsx"
-import Drawer from "@material-ui/core/Drawer"
-import Button from "@material-ui/core/Button"
-import List from "@material-ui/core/List"
-import Divider from "@material-ui/core/Divider"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemIcon from "@material-ui/core/ListItemIcon"
-import ListItemText from "@material-ui/core/ListItemText"
-import HomeIcon from '@material-ui/icons/Home';
-import MailIcon from "@material-ui/icons/Mail"
+import { Assignment, Group, Home } from "@material-ui/icons"
+import ChatIcon from "@material-ui/icons/Chat"
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Drawer,
+  Button,
+  Divider,
+} from "@material-ui/core"
 import useStyles from "./styles"
 
-const sections = [
-  { title: "Home", url: "/" },
-  { title: "Dashboard", url: "/dashboard" },
-  { title: "Login", url: "/login" },
-  { title: "Signup", url: "/signup" },
-]
-
-export default function TemporaryDrawer({ children }) {
+export default function SideDrawer({ children }) {
   const classes = useStyles()
   const [state, setState] = React.useState({ left: false })
+  const [mode, setMode] = useState("light")
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -42,19 +38,43 @@ export default function TemporaryDrawer({ children }) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        <ListItem>Pages</ListItem>
+      <List className={classes.title}>
+        <ListItem>PAGES</ListItem>
       </List>
       <Divider />
       <List>
-        {sections.map((text, index) => (
-          <ListItem button key={text.title}>
+        <ListItem>
+          <ListItem button href="/">
             <ListItemIcon>
-              {index % 2 === 0 ? <HomeIcon /> : <MailIcon />}
+              <Home />
             </ListItemIcon>
-            <ListItemText primary={text.title} />
+            <ListItemText primary="Homepage" />
           </ListItem>
-        ))}
+        </ListItem>
+        <ListItem>
+          <ListItem button href="/login">
+            <ListItemIcon>
+              <Assignment />
+            </ListItemIcon>
+            <ListItemText primary="Login" />
+          </ListItem>
+        </ListItem>
+        <ListItem>
+          <ListItem button href="/signup">
+            <ListItemIcon>
+              <Group />
+            </ListItemIcon>
+            <ListItemText primary="Sign up" />
+          </ListItem>
+        </ListItem>
+        <ListItem>
+          <ListItem button href="/dashboard">
+            <ListItemIcon>
+              <ChatIcon />
+            </ListItemIcon>
+            <ListItemText primary="Dashboard" />
+          </ListItem>
+        </ListItem>
       </List>
     </div>
   )

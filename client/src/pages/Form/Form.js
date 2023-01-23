@@ -32,23 +32,15 @@ const Form = () => {
             className={`${classes.root} ${classes.form}`}
             onSubmit={handleFormSubmit}
           >
-            <Typography variant="h5" style={{marginBottom: "20px"}}>Create a Review</Typography>
+            <Typography variant="h5" style={{ marginBottom: "20px" }}>
+              Create a Review
+            </Typography>
             <TextField
               name="company name"
               variant="outlined"
               label="Company Name"
               fullWidth
               value="Company Name"
-              onChange={handleChange}
-            />
-            <TextField
-              name="Interview Experience"
-              variant="outlined"
-              label="Interview Experience"
-              fullWidth
-              multiline
-              minRows={4}
-              value="Interview Experience"
               onChange={handleChange}
             />
             <TextField
@@ -65,6 +57,16 @@ const Form = () => {
               label="Interviewer Info"
               fullWidth
               value="Interviewer Info"
+              onChange={handleChange}
+            />
+            <TextField
+              name="Interview Experience"
+              variant="outlined"
+              label="Interview Experience"
+              fullWidth
+              multiline
+              minRows={4}
+              value="Interview Experience"
               onChange={handleChange}
             />
             <Rating

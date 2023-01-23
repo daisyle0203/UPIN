@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
   },
   paper: {
     marginTop: theme.spacing(8),
-    padding: theme.spacing(3),
+    padding: theme.spacing(3),    
   },
   form: {
     display: "flex",
@@ -24,8 +24,5 @@ export default makeStyles((theme) => ({
   },
   rating: {
     marginBottom: 10,
-  }
+  },
 }))
-
-
-
