@@ -24,5 +24,4 @@ export default makeStyles((theme) => ({
   },
   rating: {
     marginBottom: 10,
-  },
-}))
+  },}))
