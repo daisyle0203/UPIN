@@ -30,7 +30,7 @@ export const ADD_REVIEW = gql`
     $interviewExperience: String!
     $role: String!
     $interviewerInfo: String!
-    $rating: Int!
+    $rating: Float!
   ) {
     addReview(
       company: $company

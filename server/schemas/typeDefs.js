@@ -16,7 +16,7 @@ const typeDefs = gql`
     role: String
     interviewerInfo: String
     reviewAuthor: String
-    rating: Int
+    rating: Float
     createdAt: String
     comments: [Comment]!
   }
