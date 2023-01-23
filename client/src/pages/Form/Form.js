@@ -9,17 +9,42 @@ import {
 } from "@material-ui/core"
 import useStyles from "./styles"
 import Rating from "@material-ui/lab/Rating"
+import { useMutation } from '@apollo/client'
+import { ADD_REVIEW } from "../../utils/mutations" 
 
-const handleChange = (event) => {}
 
-const handleFormSubmit = async (event) => {}
 
 const handleClear = () => {}
 
 const Form = () => {
   const classes = useStyles()
 
-  const [clicked, setClicked] = useState()
+  const [addReview] = useMutation(ADD_REVIEW)
+  const [form, setForm] = useState({
+    company: '',
+    role: '',
+    interviewerInfo: '',
+    interviewExperience: '',
+    rating: 0
+  })
+
+  const handleChange = (event) => {
+    
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value
+    })
+    
+  }
+  console.log(form)
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const data = await addReview({
+      variables: form
+    })
+    console.log(data)
+  }
 
   return (
     <>
@@ -36,46 +61,43 @@ const Form = () => {
               Create a Review
             </Typography>
             <TextField
-              name="company name"
+              name="company"
               variant="outlined"
               label="Company Name"
               fullWidth
-              value="Company Name"
+              placeholder="Company Name" 
               onChange={handleChange}
             />
             <TextField
-              name="Role"
+              name="role"
               variant="outlined"
               label="Role"
               fullWidth
-              value="Role"
+              placeholder="Role"
               onChange={handleChange}
             />
             <TextField
-              name="Interviewer Info"
+              name="interviewerInfo"
               variant="outlined"
               label="Interviewer Info"
               fullWidth
-              value="Interviewer Info"
+              placeholder="Interviewer Info"
               onChange={handleChange}
             />
             <TextField
-              name="Interview Experience"
+              name="interviewExperience"
               variant="outlined"
               label="Interview Experience"
               fullWidth
               multiline
               minRows={4}
-              value="Interview Experience"
+              placeholder="Interview Experience"
               onChange={handleChange}
             />
             <Rating
-              name="simple-controlled"
+              name="rating"
               precision={0.5}
-              value={clicked}
-              onChange={(event, newValue) => {
-                setClicked(newValue)
-              }}
+              onChange={handleChange}
               size="large"
               className={classes.rating}
             />
