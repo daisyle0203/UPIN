@@ -1,11 +1,5 @@
 import React from "react"
-import {
-  Divider,
-  IconButton,
-  Switch,
-  Toolbar,
-  Typography,
-} from "@material-ui/core"
+import { Divider, IconButton, Switch, Toolbar, Link } from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
 import SideDrawer from "../SideDrawer/SideDrawer"
 import Button from "@material-ui/core/Button"
@@ -29,12 +23,15 @@ function Header({ setMode, mode }) {
             <MenuIcon />
           </IconButton>
         </SideDrawer>
-        <Typography variant="h6" className={classes.title}>
+        <Link href="/" className={classes.title}>
           <FindReplaceIcon />
           Re:View
-        </Typography>
+        </Link>
         {Auth.loggedIn() ? (
           <>
+            <Button href="/me" variant="contained" color="primary">
+              {Auth.getProfile().data.username}'s Profile
+            </Button>
             <Button
               variant="contained"
               color="secondary"
@@ -53,7 +50,7 @@ function Header({ setMode, mode }) {
               href="signup"
               variant="outlined"
               color="primary"
-              style={{ marginLeft: "10px" }}
+              className={classes.signup}
             >
               Sign up
             </Button>

@@ -28,13 +28,8 @@ function Home() {
         </Typography>
         <Grid container spacing={2} justifyContent="center" style={{marginTop: "30px"}}>
           <Grid item>
-            <Button href="/dashboard" variant="contained" color="secondary">
+            <Button href="/profiles/:username" variant="contained" color="secondary">
               Create A Review
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button href="/reviews" variant="outlined" color="secondary">
-              View All Reviews
             </Button>
           </Grid>
         </Grid>

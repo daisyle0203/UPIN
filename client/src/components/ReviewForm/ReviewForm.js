@@ -14,7 +14,7 @@ import { ADD_REVIEW } from "../../utils/mutations"
 
 const handleClear = () => {}
 
-const Form = () => {
+const ReviewForm = () => {
   const classes = useStyles()
 
   const [addReview] = useMutation(ADD_REVIEW)
@@ -124,4 +124,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default ReviewForm

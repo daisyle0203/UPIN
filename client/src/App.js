@@ -11,10 +11,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home/Home"
 import Login from "./pages/Auth/Login/Login"
 import SignUp from "./pages/Auth/SignUp/SignUp"
-import Form from "./pages/Form/Form"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
-import Posts from "./components/Posts/Posts"
+// import SingleReview from "./pages/SingleReview/SingleReview"
+import Profile from "./pages/Profile/Profile"
 import { indigo, red, teal } from "@material-ui/core/colors"
 
 const httpLink = createHttpLink({
@@ -63,8 +63,9 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
-              <Route path="/dashboard" element={<Form />} />
-              <Route path="/reviews" element={<Posts />} />
+              <Route path="/me" element={<Profile />} />
+              <Route path="/profiles/:username" element={<Profile />} />
+              {/* <Route path="/review/reviewId" element={<SingleReview />} /> */}
             </Routes>
           </Router>
         </Container>
