@@ -33,7 +33,7 @@ function Home() {
             </Button>
           </Grid>
           <Grid item>
-            <Button href="/dashboard" variant="outlined" color="secondary">
+            <Button href="/reviews" variant="outlined" color="secondary">
               View All Reviews
             </Button>
           </Grid>
