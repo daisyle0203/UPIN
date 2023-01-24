@@ -19,7 +19,6 @@ function Home() {
           align="center"
           color="textPrimary"
           gutterBottom
-          style={{ marginTop: "65px" }}
         >
           Welcome to Re:View!
         </Typography>
@@ -44,7 +43,7 @@ function Home() {
         <img
           src="https://blush.design/api/download?shareUri=Fa0J7qSKKgOmI--h&c=Clothing_0%7Eff4b33-0.2%7Eff4b33-0.4%7E02bad3&w=800&h=800&fm=png"
           alt="two people saying hi"
-          style={{ width: "100%", height: "650px", marginTop: "70px" }}
+          style={{ width: "100%", height: "650px"}}
         />
       </Container>
     </>
