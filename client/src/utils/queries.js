@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_COMPANY_REVIEWS = gql`
-  query Reviews($company: String) {
-    reviews(company: $company) {
+export const QUERY_REVIEWS = gql`
+  query Reviews {
+    reviews{
       interviewExperience
       role
       interviewerInfo

@@ -5,8 +5,11 @@ import {
   CssBaseline,
   Button,
 } from "@material-ui/core"
+import Auth from "../../utils/auth"
 
 function Home() {
+  const user = Auth.loggedIn() && Auth.getProfile().data.username 
+
   return (
     <>
       <Container maxWidth="lg">
@@ -28,8 +31,13 @@ function Home() {
         </Typography>
         <Grid container spacing={2} justifyContent="center" style={{marginTop: "30px"}}>
           <Grid item>
-            <Button href="/profiles/:username" variant="contained" color="secondary">
+            <Button href={`/profiles/${user}`} variant="contained" color="secondary">
               Create A Review
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button href="/reviews" variant="outlined" color="secondary">
+              View All Reviews
             </Button>
           </Grid>
         </Grid>

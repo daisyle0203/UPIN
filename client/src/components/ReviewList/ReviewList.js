@@ -38,7 +38,7 @@ const ReviewList = ({
   const classes = useStyles()
   const [value, setValue] = useState(4)
 
-  if (!reviews.length) {
+  if (!reviews?.length) {
     return <Typography variant="h6">No Reviews Yet</Typography>
   }
 

@@ -33,7 +33,7 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    reviews(company: String): [Review]
+    reviews: [Review]
     review(reviewId: ID!): Review
     me: User
   }
@@ -45,7 +45,7 @@ const typeDefs = gql`
       interviewExperience: String!
       role: String!
       interviewerInfo: String!
-      rating: Int!
+      rating: Float!
     ): Review
     addComment(reviewId: ID!, commentText: String!): Review
     removeReview(reviewId: ID!): Review
