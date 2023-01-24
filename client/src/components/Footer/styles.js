@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.primary.blue,
     padding: theme.spacing(3, 0),
-    position: "fixed",
+    position: "absolute",
     bottom: 0,
     width: "100%",
   },
