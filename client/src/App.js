@@ -12,7 +12,7 @@ import Home from "./pages/Home/Home"
 import Login from "./pages/Auth/Login/Login"
 import SignUp from "./pages/Auth/SignUp/SignUp"
 import Header from "./components/Header/Header"
-import Footer from "./components/Footer/Footer"
+// import Footer from "./components/Footer/Footer"
 // import SingleReview from "./pages/SingleReview/SingleReview"
 import Profile from "./pages/Profile/Profile"
 import Review from "./pages/Review/Review"
@@ -71,7 +71,7 @@ function App() {
             </Routes>
           </Router>
         </Container>
-        <Footer />
+        {/* <Footer /> */}
       </ThemeProvider>
     </ApolloProvider>
   )
