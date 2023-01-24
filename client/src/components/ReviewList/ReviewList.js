@@ -19,6 +19,9 @@ import DeleteIcon from "@material-ui/icons/Delete"
 import Rating from "@material-ui/lab/Rating"
 import { red } from "@material-ui/core/colors"
 import { Favorite, FavoriteBorder } from "@material-ui/icons"
+import { useMutation } from "@apollo/client"
+import { REMOVE_REVIEW } from "../../utils/mutations"
+import { QUERY_USER, QUERY_ME } from "../../utils/queries"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +40,37 @@ const ReviewList = ({
 }) => {
   const classes = useStyles()
   const [value, setValue] = useState(4)
+  const [removeReview, { error }] = useMutation(REMOVE_REVIEW, {
+    update(cache, { data: { removeReview } }) {
+      try {
+        const { reviews } = cache.readQuery({ query: QUERY_USER })
+        cache.writeQuery({
+          query: QUERY_USER,
+          data: { reviews: reviews.filter((r) => r._id !== removeReview._id) },
+        })
+      } catch (e) {
+        console.error(e)
+      }
+
+      const { me } = cache.readQuery({ query: QUERY_ME })
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: {
+          me: {
+            ...me,
+            reviews: me.reviews.filter((r) => r._id !== removeReview._id),
+          },
+        },
+      })
+    },
+  })
+
+  const handleDelete = (reviewId) => {
+    console.log(reviewId)
+    removeReview({
+      variables: { reviewId },
+    })
+  }
 
   if (!reviews?.length) {
     return <Typography variant="h6">No Reviews Yet</Typography>
@@ -94,7 +128,10 @@ const ReviewList = ({
                     <ChatBubbleOutlineIcon />
                   </IconButton>
                   <Link size="small">2 comments</Link>
-                  <IconButton aria-label="delete">
+                  <IconButton
+                    aria-label="delete"
+                    onClick={() => handleDelete(review.reviewId)}
+                  >
                     <DeleteIcon />
                   </IconButton>
                 </CardActions>

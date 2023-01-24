@@ -9,7 +9,7 @@ import { CssBaseline, Typography } from "@material-ui/core"
 
 const Profile = () => {
   const { username: userParam } = useParams()
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  const { loading, data, refetch } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   })
   const user = data?.me || data?.user || {}
@@ -41,7 +41,7 @@ const Profile = () => {
       <Typography variant="h5">
         Viewing {userParam ? `${user.username}'s` : "your"} profile
       </Typography>
-      {!userParam && <ReviewForm />}
+      {userParam && <ReviewForm refetch={refetch} />}
       <ReviewList
         reviews={user?.reviews}
         title={`${user?.username}'s reviews`}

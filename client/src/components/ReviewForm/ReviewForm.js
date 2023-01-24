@@ -11,12 +11,11 @@ import useStyles from "./styles"
 import Rating from "@material-ui/lab/Rating"
 import { useMutation } from "@apollo/client"
 import { ADD_REVIEW } from "../../utils/mutations"
-import { QUERY_USER } from "../../utils/queries"
-import { QUERY_ME } from "../../utils/queries"
+import { QUERY_USER, QUERY_ME} from "../../utils/queries"
 
 const handleClear = () => {}
 
-const ReviewForm = () => {
+const ReviewForm = ({refetch}) => {
   const classes = useStyles()
 
   const [form, setForm] = useState({
@@ -38,6 +37,7 @@ const ReviewForm = () => {
         })
       } catch (e) {
         console.error(e)
+        refetch()
       }
 
       const { me } = cache.readQuery({ query: QUERY_ME })

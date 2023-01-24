@@ -1,7 +1,6 @@
 import React from "react"
 import { useQuery } from "@apollo/client"
 import ReviewList from "../../components/ReviewList/ReviewList"
-// import ReviewForm from "../../components/ReviewForm/ReviewForm"
 import { QUERY_REVIEWS } from "../../utils/queries"
 import { CssBaseline, Typography } from "@material-ui/core"
 
