@@ -15,6 +15,7 @@ import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 // import SingleReview from "./pages/SingleReview/SingleReview"
 import Profile from "./pages/Profile/Profile"
+import Review from "./pages/Review/Review"
 import { indigo, red, teal } from "@material-ui/core/colors"
 
 const httpLink = createHttpLink({
@@ -65,6 +66,7 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/me" element={<Profile />} />
               <Route path="/profiles/:username" element={<Profile />} />
+              <Route path="/reviews" element={<Review />} />
               {/* <Route path="/review/reviewId" element={<SingleReview />} /> */}
             </Routes>
           </Router>

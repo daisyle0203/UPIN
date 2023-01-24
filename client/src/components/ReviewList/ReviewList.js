@@ -15,6 +15,7 @@ import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import MoreVertIcon from "@material-ui/icons/MoreVert"
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline"
+import DeleteIcon from "@material-ui/icons/Delete"
 import Rating from "@material-ui/lab/Rating"
 import { red } from "@material-ui/core/colors"
 import { Favorite, FavoriteBorder } from "@material-ui/icons"
@@ -37,8 +38,7 @@ const ReviewList = ({
   const classes = useStyles()
   const [value, setValue] = useState(4)
 
-  if (!reviews.length) {
-    console.log(reviews)
+  if (!reviews?.length) {
     return <Typography variant="h6">No Reviews Yet</Typography>
   }
 
@@ -94,6 +94,9 @@ const ReviewList = ({
                     <ChatBubbleOutlineIcon />
                   </IconButton>
                   <Link size="small">2 comments</Link>
+                  <IconButton aria-label="delete">
+                    <DeleteIcon />
+                  </IconButton>
                 </CardActions>
               </Card>
             </Grid>

@@ -9,36 +9,59 @@ import {
 } from "@material-ui/core"
 import useStyles from "./styles"
 import Rating from "@material-ui/lab/Rating"
-import { useMutation } from '@apollo/client'
-import { ADD_REVIEW } from "../../utils/mutations" 
+import { useMutation } from "@apollo/client"
+import { ADD_REVIEW } from "../../utils/mutations"
+import { QUERY_USER } from "../../utils/queries"
+import { QUERY_ME } from "../../utils/queries"
 
 const handleClear = () => {}
 
 const ReviewForm = () => {
   const classes = useStyles()
 
-  const [addReview] = useMutation(ADD_REVIEW)
   const [form, setForm] = useState({
-    company: '',
-    role: '',
-    interviewerInfo: '',
-    interviewExperience: '',
-    rating: 0
+    company: "",
+    role: "",
+    interviewerInfo: "",
+    interviewExperience: "",
+    rating: 0,
+  })
+  const [addReview, { error }] = useMutation(ADD_REVIEW, {
+    update(cache, { data: { addReview } }) {
+      console.log(cache)
+      try {
+        const { reviews } = cache.readQuery({ query: QUERY_USER })
+        console.log(reviews)
+        cache.writeQuery({
+          query: QUERY_USER,
+          data: { reviews: [addReview, ...reviews] },
+        })
+      } catch (e) {
+        console.error(e)
+      }
+
+      const { me } = cache.readQuery({ query: QUERY_ME })
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, reviews: [...me.reviews, addReview] } },
+      })
+    },
   })
 
   const handleChange = (event) => {
     setForm({
       ...form,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     })
-    
   }
   console.log(form)
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
+    form.rating = parseFloat(form.rating)
+    console.log(form)
     const data = await addReview({
-      variables: form
+      variables: form,
     })
     console.log(data)
   }
@@ -62,7 +85,7 @@ const ReviewForm = () => {
               variant="outlined"
               label="Company Name"
               fullWidth
-              placeholder="Company Name" 
+              placeholder="Company Name"
               onChange={handleChange}
             />
             <TextField

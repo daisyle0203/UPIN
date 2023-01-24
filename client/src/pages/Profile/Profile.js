@@ -13,11 +13,12 @@ const Profile = () => {
     variables: { username: userParam },
   })
   const user = data?.me || data?.user || {}
+  // console.log(user)
   // redirect to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/me" />
+  if (Auth.loggedIn() && Auth.getProfile().data.username !== userParam) {
+    return <Navigate to={`/profiles/${Auth.getProfile().data.username}`} />
   }
-
+  console.log(data)
   if (loading) {
     return <Typography>Loading...</Typography>
   }
@@ -38,12 +39,12 @@ const Profile = () => {
     <>
       <CssBaseline />
       <Typography variant="h5">
-        Viewing {userParam ? `user.username}'s` : "your"} profile
+        Viewing {userParam ? `${user.username}'s` : "your"} profile
       </Typography>
       {!userParam && <ReviewForm />}
       <ReviewList
-        reviews={user.reviews}
-        title={`${user.username}'s reviews`}
+        reviews={user?.reviews}
+        title={`${user?.username}'s reviews`}
         showTitle={false}
         showUsername={false}
       />
