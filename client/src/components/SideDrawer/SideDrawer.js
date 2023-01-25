@@ -77,7 +77,7 @@ export default function SideDrawer({ children }) {
             <ListItemIcon>
               <ChatIcon />
             </ListItemIcon>
-            <ListItemText primary="Dashboard" />
+            <ListItemText primary="Reviews" />
           </ListItemLink>
         </ListItem>
       </List>

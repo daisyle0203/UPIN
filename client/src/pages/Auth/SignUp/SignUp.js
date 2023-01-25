@@ -126,7 +126,7 @@ export default function SignUp() {
       <img
           src="https://blush.design/api/download?shareUri=PLLnU9sedLKjZGis&w=800&h=800&fm=png"
           alt="two people saying hi"
-          style={{ width: "100%", height: "650px"}}
+          style={{ width: "100%", height: "100%"}}
         />
     </>
   )

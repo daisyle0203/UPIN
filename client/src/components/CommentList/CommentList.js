@@ -23,9 +23,9 @@ const CommentList = ({ comments = [] }) => {
               <Card variant="outline">
                 <CardHeader>
                   {comment.commentAuthor} commented{" "}
-                  <span style={{ fontSize: "0.825rem" }}>
+                  <Typography style={{ fontSize: "0.825rem" }}>
                     on {comment.createdAt}
-                  </span>
+                  </Typography>
                 </CardHeader>
                 <Typography paragraph>{comment.commentText}</Typography>
               </Card>

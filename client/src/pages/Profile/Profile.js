@@ -35,6 +35,11 @@ const Profile = () => {
           You need to be logged in to create a review. Please use the log in
           button above or sign up if you have not had an account with us!
         </Typography>
+        <img
+          src="https://blush.design/api/download?shareUri=PLLnU9sedLKjZGis&w=800&h=800&fm=png"
+          alt="two people saying hi"
+          style={{ width: "100%", height: "100%"}}
+        />
       </>
     )
   }

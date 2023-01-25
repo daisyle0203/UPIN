@@ -1,9 +1,18 @@
 import React, { useState } from "react"
-import { Link, Paper, TextField, Typography, Button, CssBaseline } from "@material-ui/core"
+import {
+  Link,
+  Paper,
+  TextField,
+  Typography,
+  Button,
+  CssBaseline,
+  Grid,
+  Card,
+  Container,
+} from "@material-ui/core"
 import { useMutation } from "@apollo/client"
 import { ADD_COMMENT } from "../../utils/mutations"
 import Auth from "../../utils/auth"
-
 
 const CommentForm = ({ reviewId, refetch }) => {
   const [commentText, setCommentText] = useState("")
@@ -38,38 +47,48 @@ const CommentForm = ({ reviewId, refetch }) => {
 
   return (
     <>
-    <CssBaseline />
-      <Typography variant="h6">
-        What are your thoughts on this review?
-      </Typography>
-      {Auth.loggedIn() ? (
-        <Paper>
-          <form
-            onSubmit={handleFormSubmit}
-          >
-            <TextField
-              name="commentText"
-              placeholder="Add your comment..."
-              value={commentText}
-              className="form-input w-100"
-              style={{ lineHeight: "1.5", resize: "vertical" }}
-              onChange={handleChange}
-            ></TextField>
+      <CssBaseline />
 
-            <Button
-              variant="contained"
-              color="secondary"
-              size="large"
-              type="submit"
-            >
-              Add Comment
-            </Button>
-          </form>
-        </Paper>
+      <Card style={{ marginTop: "30px" }}>
+        <Typography variant="h6">
+          What are your thoughts on this review?
+        </Typography>
+      </Card>
+
+      {Auth.loggedIn() ? (
+        <Container component={Card} maxWidth="xs">
+          <Paper>
+            <form onSubmit={handleFormSubmit}>
+              <Grid container spacing={4}>
+                <Grid item xs={12}>
+                  <TextField
+                    name="commentText"
+                    placeholder="Add your comment..."
+                    value={commentText}
+                    variant="outlined"
+                    fullWidth
+                    onChange={handleChange}
+                  ></TextField>
+                </Grid>
+                <Grid item xs={12}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    size="small"
+                    type="submit"
+                  >
+                    Add Comment
+                  </Button>
+                </Grid>
+              </Grid>
+            </form>
+          </Paper>
+        </Container>
       ) : (
         <Typography variant="h6">
           You need to be logged in to share your reviews. Please{" "}
-          <Link href="/login">login</Link> or <Link href="/signup">signup.</Link>
+          <Link href="/login">login</Link> or{" "}
+          <Link href="/signup">signup.</Link>
         </Typography>
       )}
     </>

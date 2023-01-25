@@ -8,7 +8,7 @@ import {
 import Auth from "../../utils/auth"
 
 function Home() {
-  const user = Auth.loggedIn() && Auth.getProfile().data.username 
+  const user = Auth.loggedIn() && Auth.getProfile().data.username
 
   return (
     <>
@@ -28,9 +28,18 @@ function Home() {
           seekers make informed decisions by sharing valuable insights and
           experiences. Thank you for visiting and happy job hunting!
         </Typography>
-        <Grid container spacing={2} justifyContent="center" style={{marginTop: "30px"}}>
+        <Grid
+          container
+          spacing={2}
+          justifyContent="center"
+          style={{ marginTop: "30px" }}
+        >
           <Grid item>
-            <Button href={`/profiles/${user}`} variant="contained" color="secondary">
+            <Button
+              href={`/profiles/${user}`}
+              variant="contained"
+              color="secondary"
+            >
               Create A Review
             </Button>
           </Grid>
@@ -40,12 +49,12 @@ function Home() {
             </Button>
           </Grid>
         </Grid>
-        <img
-          src="https://blush.design/api/download?shareUri=Fa0J7qSKKgOmI--h&c=Clothing_0%7Eff4b33-0.2%7Eff4b33-0.4%7E02bad3&w=800&h=800&fm=png"
-          alt="two people saying hi"
-          style={{ width: "100%", height: "650px"}}
-        />
       </Container>
+      <img
+        src="https://blush.design/api/download?shareUri=Fa0J7qSKKgOmI--h&c=Clothing_0%7Eff4b33-0.2%7Eff4b33-0.4%7E02bad3&w=800&h=800&fm=png"
+        alt="two people saying hi"
+        style={{ width: "100%", height: "100%" }}
+      />
     </>
   )
 }

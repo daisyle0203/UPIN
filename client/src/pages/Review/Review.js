@@ -21,11 +21,6 @@ const Review = () => {
       <ReviewList
         reviews={data?.reviews}
       />
-      <img
-          src="https://blush.design/api/download?shareUri=aKVRpNpk-&w=800&h=800&fm=png"
-          alt="2 plants"
-          style={{ width: "100%", height: "750px"}}
-        />
     </>
   )
   
