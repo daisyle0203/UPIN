@@ -1,16 +1,12 @@
 import React, { useState } from "react"
-import { Link, Paper, TextField, Typography } from "@material-ui/core"
+import { Link, Paper, TextField, Typography, Button } from "@material-ui/core"
 import { useMutation } from "@apollo/client"
-
 import { ADD_COMMENT } from "../../utils/mutations"
-
 import Auth from "../../utils/auth"
-import { Button } from "bootstrap"
+
 
 const CommentForm = ({ reviewId }) => {
   const [commentText, setCommentText] = useState("")
-  const [characterCount, setCharacterCount] = useState(0)
-
   const [addComment, { error }] = useMutation(ADD_COMMENT)
 
   const handleFormSubmit = async (event) => {
@@ -36,7 +32,6 @@ const CommentForm = ({ reviewId }) => {
 
     if (name === "commentText" && value.length <= 280) {
       setCommentText(value)
-      setCharacterCount(value.length)
     }
   }
 
@@ -45,20 +40,9 @@ const CommentForm = ({ reviewId }) => {
       <Typography variant="h6">
         What are your thoughts on this review?
       </Typography>
-
       {Auth.loggedIn() ? (
         <Paper>
-          <Typography
-            variant="h6"
-            className={`m-0 ${
-              characterCount === 280 || error ? "text-danger" : ""
-            }`}
-          >
-            Character Count: {characterCount}/280
-            {error && <span className="ml-2">{error.message}</span>}
-          </Typography>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
             <TextField
@@ -81,9 +65,9 @@ const CommentForm = ({ reviewId }) => {
           </form>
         </Paper>
       ) : (
-        <Typography>
+        <Typography variant="h6">
           You need to be logged in to share your reviews. Please{" "}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link href="/login">login</Link> or <Link href="/signup">signup.</Link>
         </Typography>
       )}
     </>

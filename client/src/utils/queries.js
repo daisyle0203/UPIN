@@ -3,6 +3,7 @@ import { gql } from "@apollo/client";
 export const QUERY_REVIEWS = gql`
   query Reviews {
     reviews{
+      company
       interviewExperience
       role
       interviewerInfo
@@ -61,18 +62,24 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_REVIEW = gql`
-  query User($username: String!) {
-    user(username: $username) {
-      reviews {
-        _id
-        company
-        interviewExperience
-        role
-        interviewerInfo
-        reviewAuthor
-        rating
-        createdAt
-      }
+  query Review($reviewId: ID!) {
+  review(reviewId: $reviewId) {
+    interviewExperience
+    role
+    company
+    _id
+    interviewerInfo
+    reviewAuthor
+    rating
+    createdAt
+    comments {
+      _id
+      commentText
+      commentAuthor
+      createdAt
     }
   }
+}
 `;
+
+

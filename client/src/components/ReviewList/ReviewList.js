@@ -7,6 +7,7 @@ import {
   Avatar,
   CardHeader,
   IconButton,
+  Tooltip,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
@@ -44,7 +45,7 @@ const ReviewList = ({ refetch, reviews }) => {
   if (!reviews?.length) {
     return <Typography variant="h6">No Reviews Yet</Typography>
   }
-
+ 
   return (
     <>
       <CssBaseline />
@@ -86,16 +87,25 @@ const ReviewList = ({ refetch, reviews }) => {
                   <Rating name="read-only" value={review.rating} readOnly />
                 </CardContent>
                 <CardActions disableSpacing>
-                  <IconButton aria-label="share">
-                    <ChatBubbleOutlineIcon />
-                  </IconButton>
-                  <Link size="small">2 comments</Link>
-                  <IconButton
-                    aria-label="delete"
-                    onClick={() => handleDelete(review._id)}
-                  >
-                    <DeleteIcon />
-                  </IconButton>
+                  <Tooltip title="Comment">
+                    <IconButton
+                      aria-label="comment"
+                      href={`/reviews/${review._id}`}
+                    >
+                      <ChatBubbleOutlineIcon />
+                    </IconButton>
+                  </Tooltip>
+                  <Link size="small" href={`/reviews/${review._id}`}>
+                    {review.comments.length} comments
+                  </Link>
+                  <Tooltip title="Delete">
+                    <IconButton
+                      aria-label="delete"
+                      onClick={() => handleDelete(review._id)}
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  </Tooltip>
                 </CardActions>
               </Card>
               {error && (

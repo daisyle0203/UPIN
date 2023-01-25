@@ -7,6 +7,7 @@ import { CssBaseline, Typography } from "@material-ui/core"
 const Review = () => {
   const { loading, data } = useQuery(QUERY_REVIEWS)
   const user = data?.user || {}
+  console.log(data)
 
   if (loading) {
     return <Typography>Loading...</Typography>
