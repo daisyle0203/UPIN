@@ -4,8 +4,9 @@ export default makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.primary.blue,
     padding: theme.spacing(3, 0),
+    marginTop: theme.spacing(5),
     position: "absolute",
-    bottom: 0,
+    // bottom: 0,
     width: "100%",
   },
   links: {
