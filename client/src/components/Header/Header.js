@@ -48,17 +48,21 @@ function Header({ setMode, mode }) {
           </>
         ) : (
           <>
-            <Button href="/login" variant="contained" color="primary">
-              Log In
-            </Button>
-            <Button
-              href="signup"
-              variant="outlined"
-              color="primary"
-              className={classes.signup}
-            >
-              Sign up
-            </Button>
+            <Box display={{xs: 'none', sm: 'initial'}}>
+              <Button href="/login" variant="contained" color="primary">
+                Log In
+              </Button>
+            </Box>
+            <Box display={{xs: 'none', sm: 'initial'}}>
+              <Button
+                href="signup"
+                variant="outlined"
+                color="primary"
+                className={classes.signup}
+              >
+                Sign up
+              </Button>
+            </Box>
           </>
         )}
         <Brightness2Icon style={{ marginLeft: "10px" }} />
