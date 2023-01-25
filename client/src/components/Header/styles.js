@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles"
+import { NoEncryption } from "@material-ui/icons"
 
 export default makeStyles((theme) => ({
   header: {
@@ -17,7 +18,7 @@ export default makeStyles((theme) => ({
     fontFamily: "Montserrat",
   },
   logout: {
-    marginLeft: "10px",
+    marginLeft: "10px"
   },
   signup: {
     marginLeft: "10px",

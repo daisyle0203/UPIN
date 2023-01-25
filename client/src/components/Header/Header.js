@@ -7,6 +7,7 @@ import FindReplaceIcon from "@material-ui/icons/FindReplace"
 import Brightness2Icon from "@material-ui/icons/Brightness2"
 import Auth from "../../utils/auth"
 import useStyles from "./styles"
+import Box from '@material-ui/core/Box'
 
 function Header({ setMode, mode }) {
   const classes = useStyles()
@@ -29,17 +30,21 @@ function Header({ setMode, mode }) {
         </Link>
         {Auth.loggedIn() ? (
           <>
-            <Button href="/me" variant="contained" color="primary">
-              {Auth.getProfile().data.username}'s Profile
-            </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={logout}
-              className={classes.logout}
-            >
-              Logout
-            </Button>
+            <Box display={{xs: 'none', sm: 'initial'}}>
+              <Button href="/me" variant="contained" color="primary">
+                {Auth.getProfile().data.username}'s Profile
+              </Button>
+            </Box>
+            <Box display={{xs: 'none', sm: 'initial'}}>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={logout}
+                className={classes.logout}
+              >
+                Logout
+              </Button>
+            </Box>
           </>
         ) : (
           <>
