@@ -123,6 +123,11 @@ export default function SignUp() {
           )}
         </Paper>
       </Container>
+      <img
+          src="https://blush.design/api/download?shareUri=PLLnU9sedLKjZGis&w=800&h=800&fm=png"
+          alt="two people saying hi"
+          style={{ width: "100%", height: "650px"}}
+        />
     </>
   )
 }
