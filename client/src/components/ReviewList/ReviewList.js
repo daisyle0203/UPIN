@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import {
   Typography,
   Link,
@@ -6,7 +6,6 @@ import {
   CssBaseline,
   Avatar,
   CardHeader,
-  Checkbox,
   IconButton,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
@@ -18,10 +17,8 @@ import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline"
 import DeleteIcon from "@material-ui/icons/Delete"
 import Rating from "@material-ui/lab/Rating"
 import { red } from "@material-ui/core/colors"
-import { Favorite, FavoriteBorder } from "@material-ui/icons"
 import { useMutation } from "@apollo/client"
 import { REMOVE_REVIEW } from "../../utils/mutations"
-import { QUERY_USER, QUERY_ME } from "../../utils/queries"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,44 +29,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const ReviewList = ({
-  reviews,
-  title,
-  showTitle = true,
-  showUsername = true,
-}) => {
+const ReviewList = ({ refetch, reviews }) => {
   const classes = useStyles()
-  const [value, setValue] = useState(4)
-  const [removeReview, { error }] = useMutation(REMOVE_REVIEW, {
-    update(cache, { data: { removeReview } }) {
-      try {
-        const { reviews } = cache.readQuery({ query: QUERY_USER })
-        cache.writeQuery({
-          query: QUERY_USER,
-          data: { reviews: reviews.filter((r) => r._id !== removeReview._id) },
-        })
-      } catch (e) {
-        console.error(e)
-      }
-
-      const { me } = cache.readQuery({ query: QUERY_ME })
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: {
-          me: {
-            ...me,
-            reviews: me.reviews.filter((r) => r._id !== removeReview._id),
-          },
-        },
-      })
-    },
-  })
+  const [removeReview, { error }] = useMutation(REMOVE_REVIEW)
 
   const handleDelete = (reviewId) => {
     console.log(reviewId)
     removeReview({
       variables: { reviewId },
     })
+    refetch()
   }
 
   if (!reviews?.length) {
@@ -79,7 +48,6 @@ const ReviewList = ({
   return (
     <>
       <CssBaseline />
-      {showTitle && <Typography variant="h6">{title}</Typography>}
       {reviews && (
         <Grid container spacing={4}>
           {reviews.map((review) => (
@@ -113,29 +81,28 @@ const ReviewList = ({
                     Interview Experience: {review.interviewExperience}
                   </Typography>
                   <Typography variant="body2" paragraph>
-                    Overall Rating: {review.overallRating}
+                    Overall Rating:
                   </Typography>
-                  <Rating name="read-only" value={value} readOnly />
+                  <Rating name="read-only" value={review.rating} readOnly />
                 </CardContent>
                 <CardActions disableSpacing>
-                  <IconButton aria-label="add to favorites">
-                    <Checkbox
-                      icon={<FavoriteBorder />}
-                      checkedIcon={<Favorite sx={{ color: "red" }} />}
-                    />
-                  </IconButton>
                   <IconButton aria-label="share">
                     <ChatBubbleOutlineIcon />
                   </IconButton>
                   <Link size="small">2 comments</Link>
                   <IconButton
                     aria-label="delete"
-                    onClick={() => handleDelete(review.reviewId)}
+                    onClick={() => handleDelete(review._id)}
                   >
                     <DeleteIcon />
                   </IconButton>
                 </CardActions>
               </Card>
+              {error && (
+                <Typography variant="body2" className={classes.customError}>
+                  {error.message}
+                </Typography>
+              )}
             </Grid>
           ))}
         </Grid>

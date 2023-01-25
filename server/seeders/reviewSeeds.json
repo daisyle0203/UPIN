@@ -1,0 +1,68 @@
+[
+    {
+        "reviewAuthor": "John Doe",
+        "company": "Google",
+        "role": "Software Engineer",
+        "rating": 4,
+        "interviewerInfo": "linkedin.com/in/john-smith-google",
+        "interviewExperience": "The interview process at Google was intense but fair. I appreciated the thoroughness of the technical questions and the time given to think through each problem. The interviewers were also friendly and provided helpful feedback on my performance.",
+        "comments": [
+            {
+                "commentAuthor": "Jane Doe",
+                "commentText": "I agree with the review, Google is definitely a great company to work for."
+            },
+            {
+                "commentAuthor": "Jim Smith",
+                "commentText": "I have also had a positive experience with Google's interview process."
+            },
+            {
+                "commentAuthor": "David Thomas",
+                "commentText": "I would love to work at Google, they have a great company culture."
+            }
+        ]
+    },
+    {
+        "reviewAuthor": "Jane Doe",
+        "company": "Amazon",
+        "role": "Product Manager",
+        "rating": 2,
+        "interviewerInfo": "linkedin.com/in/mike-johnson-amazon",
+        "interviewExperience": "I found the interview experience at Amazon to be somewhat stressful. The interviewer asked a lot of hypothetical questions and it was hard to give a clear answer. The interviewer seemed to be looking for a specific answer rather than evaluating my thought process.",
+        "comments": [
+            {
+                "commentAuthor": "Jim Smith",
+                "commentText": "I have also had a similar experience with Amazon's interview process. It was quite stressful."
+            },
+            {
+                "commentAuthor": "John Doe",
+                "commentText": "I heard from my friends that Amazon's interview process is quite tough."
+            },
+            {
+                "commentAuthor": "David Thomas",
+                "commentText": "I would suggest preparing well before going for an interview at Amazon."
+            }
+        ]
+    },
+    {
+        "reviewAuthor": "Jim Smith",
+        "company": "Facebook",
+        "role": "Data Scientist",
+        "rating": 5,
+        "interviewerInfo": "linkedin.com/in/amanda-johnson-facebook",
+        "interviewExperience": "The interview process at Facebook was very well-organized and efficient. The interviewer asked a lot of data-related questions that I found interesting and challenging. The overall experience was positive and I received an offer shortly after.",
+        "comments": [
+            {
+                "commentAuthor": "Jane Doe",
+                "commentText": "Facebook is definitely a company that values its employees and provides great opportunities for growth."
+            },
+            {
+                "commentAuthor": "John Doe",
+                "commentText": "I have also heard great things about Facebook's interview process."
+            },
+            {
+                "commentAuthor": "David Thomas",
+                "commentText": "I would recommend Facebook to anyone looking for a great place to work."
+            }
+        ]
+    }
+]

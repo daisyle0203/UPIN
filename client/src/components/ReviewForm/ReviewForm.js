@@ -11,11 +11,10 @@ import useStyles from "./styles"
 import Rating from "@material-ui/lab/Rating"
 import { useMutation } from "@apollo/client"
 import { ADD_REVIEW } from "../../utils/mutations"
-import { QUERY_USER, QUERY_ME} from "../../utils/queries"
 
 const handleClear = () => {}
 
-const ReviewForm = ({refetch}) => {
+const ReviewForm = ({ refetch }) => {
   const classes = useStyles()
 
   const [form, setForm] = useState({
@@ -25,28 +24,8 @@ const ReviewForm = ({refetch}) => {
     interviewExperience: "",
     rating: 0,
   })
-  const [addReview, { error }] = useMutation(ADD_REVIEW, {
-    update(cache, { data: { addReview } }) {
-      console.log(cache)
-      try {
-        const { reviews } = cache.readQuery({ query: QUERY_USER })
-        console.log(reviews)
-        cache.writeQuery({
-          query: QUERY_USER,
-          data: { reviews: [addReview, ...reviews] },
-        })
-      } catch (e) {
-        console.error(e)
-        refetch()
-      }
 
-      const { me } = cache.readQuery({ query: QUERY_ME })
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, reviews: [...me.reviews, addReview] } },
-      })
-    },
-  })
+  const [addReview, { error }] = useMutation(ADD_REVIEW)
 
   const handleChange = (event) => {
     setForm({
@@ -60,10 +39,16 @@ const ReviewForm = ({refetch}) => {
     event.preventDefault()
     form.rating = parseFloat(form.rating)
     console.log(form)
-    const data = await addReview({
-      variables: form,
-    })
-    console.log(data)
+
+    try {
+      const data = await addReview({
+        variables: form,
+      })
+      console.log(data)
+    } catch (e) {
+      console.error(e)
+    }
+    refetch()
   }
 
   return (
@@ -83,9 +68,9 @@ const ReviewForm = ({refetch}) => {
             <TextField
               name="company"
               variant="outlined"
-              label="Company Name"
+              label="Company"
               fullWidth
-              placeholder="Company Name"
+              placeholder="Company"
               onChange={handleChange}
             />
             <TextField
@@ -141,6 +126,11 @@ const ReviewForm = ({refetch}) => {
               Clear
             </Button>
           </form>
+          {error && (
+            <Typography variant="body2" className={classes.customError}>
+              {error.message}
+            </Typography>
+          )}
         </Paper>
       </Container>
     </>
