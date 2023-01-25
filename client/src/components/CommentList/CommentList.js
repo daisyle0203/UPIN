@@ -1,4 +1,10 @@
-import { Card, CardHeader, Grid, Typography } from "@material-ui/core"
+import {
+  Card,
+  CardHeader,
+  CssBaseline,
+  Grid,
+  Typography,
+} from "@material-ui/core"
 import React from "react"
 
 const CommentList = ({ comments = [] }) => {
@@ -8,9 +14,8 @@ const CommentList = ({ comments = [] }) => {
 
   return (
     <>
-      <Typography variant="h6" style={{ borderBottom: "1px dotted #1a1a1a" }}>
-        Comments
-      </Typography>
+      <CssBaseline />
+      <Typography variant="h6">Comments</Typography>
       <Grid container spacing={4}>
         {comments &&
           comments.map((comment) => (
