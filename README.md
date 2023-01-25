@@ -1,4 +1,4 @@
-# Project03
+# Re:View
 
 ## Description
 
@@ -20,12 +20,13 @@
 
 ## Usage
 
-Below you will find a screenshot of the home page you will see when you first load up. Once you have the home page pulled up,
-theres a login and a signup button that allows user to create/login to an account.
-once signed in, the user will be able to create new posts and view other users posts.
+Below you will find a screenshot of the home page when you first load up. Once you have the home page pulled up,
+theres a login and a signup button that allows users to create/login to an account.
+Once signed in, the user will be able to create new posts and view other users posts.
 
 ## Screenshot of homepage
-
+live url : (https://review-binary-beast.herokuapp.com/)
+![homepage](img\homepage.PNG)
 ## Credits
 
 Collaborators:
