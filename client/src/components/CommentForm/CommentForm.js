@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, Paper, TextField, Typography, Button } from "@material-ui/core"
+import { Link, Paper, TextField, Typography, Button, CssBaseline } from "@material-ui/core"
 import { useMutation } from "@apollo/client"
 import { ADD_COMMENT } from "../../utils/mutations"
 import Auth from "../../utils/auth"
@@ -38,6 +38,7 @@ const CommentForm = ({ reviewId, refetch }) => {
 
   return (
     <>
+    <CssBaseline />
       <Typography variant="h6">
         What are your thoughts on this review?
       </Typography>
