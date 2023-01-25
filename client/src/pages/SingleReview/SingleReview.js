@@ -10,7 +10,7 @@ import { Grid, Typography } from "@material-ui/core"
 const SingleReview = () => {
   const { reviewId } = useParams()
 
-  const { loading, data } = useQuery(QUERY_REVIEW, {
+  const { loading, data, refetch } = useQuery(QUERY_REVIEW, {
     variables: { reviewId: reviewId },
   })
 
@@ -46,7 +46,7 @@ const SingleReview = () => {
         <CommentList comments={review.comments} />
       </Grid>
       <Grid style={{ border: "1px dotted #1a1a1a" }}>
-        <CommentForm reviewId={review._id} />
+        <CommentForm reviewId={review._id} refetch={refetch} />
       </Grid>
     </Grid>
   )

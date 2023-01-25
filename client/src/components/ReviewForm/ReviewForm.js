@@ -12,7 +12,7 @@ import Rating from "@material-ui/lab/Rating"
 import { useMutation } from "@apollo/client"
 import { ADD_REVIEW } from "../../utils/mutations"
 
-const handleClear = () => {}
+
 
 const ReviewForm = ({ refetch }) => {
   const classes = useStyles()
@@ -26,6 +26,16 @@ const ReviewForm = ({ refetch }) => {
   })
 
   const [addReview, { error }] = useMutation(ADD_REVIEW)
+
+  const handleClear = () => {
+    setForm({ 
+      company: "",
+      role: "",
+      interviewerInfo: "",
+      interviewExperience: "",
+      rating: 0,
+    })
+  }
 
   const handleChange = (event) => {
     setForm({
@@ -101,7 +111,6 @@ const ReviewForm = ({ refetch }) => {
             />
             <Rating
               name="rating"
-              precision={0.5}
               onChange={handleChange}
               size="large"
               className={classes.rating}
