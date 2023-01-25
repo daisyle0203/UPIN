@@ -1,6 +1,10 @@
 {
   "name": "project-3",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.18.1",
+    "npm": "8.19.2"
+  },
   "description": "",
   "main": "server/server.js",
   "scripts": {
