@@ -12,8 +12,6 @@ import Rating from "@material-ui/lab/Rating"
 import { useMutation } from "@apollo/client"
 import { ADD_REVIEW } from "../../utils/mutations"
 
-
-
 const ReviewForm = ({ refetch }) => {
   const classes = useStyles()
 

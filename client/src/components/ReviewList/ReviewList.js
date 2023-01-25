@@ -13,7 +13,6 @@ import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
-import MoreVertIcon from "@material-ui/icons/MoreVert"
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline"
 import DeleteIcon from "@material-ui/icons/Delete"
 import Rating from "@material-ui/lab/Rating"
@@ -45,7 +44,7 @@ const ReviewList = ({ refetch, reviews }) => {
   if (!reviews?.length) {
     return <Typography variant="h6">No Reviews Yet</Typography>
   }
- 
+
   return (
     <>
       <CssBaseline />
@@ -59,11 +58,6 @@ const ReviewList = ({ refetch, reviews }) => {
                     <Avatar aria-label="avatar" className={classes.avatar}>
                       {review.reviewAuthor[0].toUpperCase()}
                     </Avatar>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      <MoreVertIcon />
-                    </IconButton>
                   }
                   title={review.reviewAuthor}
                   subheader={review.createdAt}
@@ -95,10 +89,13 @@ const ReviewList = ({ refetch, reviews }) => {
                       <ChatBubbleOutlineIcon />
                     </IconButton>
                   </Tooltip>
-                  {/* <Link size="small" href={`/reviews/${review._id}`}> */}
-       
-                    {/* {review.comments.length === 1 ? "comment" : "comments"} */}
-                  {/* </Link> */}
+                  <Link size="small" href={`/reviews/${review._id}`}>
+                    {review.comments?.length
+                      ? `Viewing ${review.comments.length} ${
+                          review.comments.length === 1 ? "comment" : "comments"
+                        }`
+                      : "There is no comment yet. Be the first one to comment!"}
+                  </Link>
                   <Tooltip title="Delete">
                     <IconButton
                       aria-label="delete"
