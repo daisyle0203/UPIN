@@ -5,7 +5,7 @@ import { ADD_COMMENT } from "../../utils/mutations"
 import Auth from "../../utils/auth"
 
 
-const CommentForm = ({ reviewId }) => {
+const CommentForm = ({ reviewId, refetch }) => {
   const [commentText, setCommentText] = useState("")
   const [addComment, { error }] = useMutation(ADD_COMMENT)
 
@@ -25,6 +25,7 @@ const CommentForm = ({ reviewId }) => {
     } catch (err) {
       console.error(err)
     }
+    refetch()
   }
 
   const handleChange = (event) => {

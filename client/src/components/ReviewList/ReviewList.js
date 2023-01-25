@@ -95,9 +95,10 @@ const ReviewList = ({ refetch, reviews }) => {
                       <ChatBubbleOutlineIcon />
                     </IconButton>
                   </Tooltip>
-                  <Link size="small" href={`/reviews/${review._id}`}>
-                    {review.comments.length} comments
-                  </Link>
+                  {/* <Link size="small" href={`/reviews/${review._id}`}> */}
+       
+                    {/* {review.comments.length === 1 ? "comment" : "comments"} */}
+                  {/* </Link> */}
                   <Tooltip title="Delete">
                     <IconButton
                       aria-label="delete"
