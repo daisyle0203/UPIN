@@ -11,11 +11,16 @@ import {
   Button,
   Divider,
 } from "@material-ui/core"
+
 import useStyles from "./styles"
 
 export default function SideDrawer({ children }) {
   const classes = useStyles()
   const [state, setState] = React.useState({ left: false })
+
+  function ListItemLink(props) {
+    return <ListItem button component='a' {...props} />
+  }
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -43,36 +48,37 @@ export default function SideDrawer({ children }) {
       <Divider />
       <List>
         <ListItem>
-          <ListItem button href="/">
+          <ListItemLink href="/">
             <ListItemIcon>
               <Home />
             </ListItemIcon>
             <ListItemText primary="Homepage" />
-          </ListItem>
+          </ListItemLink>
+          
         </ListItem>
         <ListItem>
-          <ListItem button href="/login">
+          <ListItemLink href="/login">
             <ListItemIcon>
               <Assignment />
             </ListItemIcon>
             <ListItemText primary="Login" />
-          </ListItem>
+          </ListItemLink>
         </ListItem>
         <ListItem>
-          <ListItem button href="/signup">
+          <ListItemLink href="/signup">
             <ListItemIcon>
               <Group />
             </ListItemIcon>
             <ListItemText primary="Sign up" />
-          </ListItem>
+          </ListItemLink>
         </ListItem>
         <ListItem>
-          <ListItem button href="/dashboard">
+          <ListItemLink href="/reviews">
             <ListItemIcon>
               <ChatIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
-          </ListItem>
+          </ListItemLink>
         </ListItem>
       </List>
     </div>
