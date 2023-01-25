@@ -101,14 +101,17 @@ export default function LogIn() {
                 </Link>
               </Grid>
             </Grid>
-          </form>
-          {error && (
-            <Typography variant="body2" className={classes.customError}>
-              {error.message}
-            </Typography>
-          )}
-        </Paper>
-      </Container>
+          </Grid>
+        </form>
+        {error &&(<Typography variant="body2" className={classes.customError}>{error.message}</Typography>)}
+      </Paper>
+      
+    </Container>
+    <img
+          src="https://blush.design/api/download?shareUri=BYssPFILduU6Wdl1&c=Clothing_0%7Eff8333-0.2%7Eff8333-0.3.0.0.2.0%7Eff8333&w=800&h=800&fm=png"
+          alt="two people on a call"
+          style={{ width: "100%", height: "650px"}}
+        />
     </>
   )
 }
