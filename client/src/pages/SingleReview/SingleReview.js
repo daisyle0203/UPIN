@@ -24,11 +24,9 @@ const SingleReview = () => {
     <Grid container spacing={4}>
       <Typography variant="h6">
         {review.reviewAuthor} <br />
-        <span style={{ fontSize: "1rem" }}>
-          had this review on {review.createdAt}
-        </span>
+        <Typography>had this review on {review.createdAt}</Typography>
       </Typography>
-      <Grid>
+      <Grid item xs={12}>
         <blockquote
           className="p-4"
           style={{
@@ -41,11 +39,10 @@ const SingleReview = () => {
           {review.interviewExperience}
         </blockquote>
       </Grid>
-
-      <Grid>
+      <Grid item xs={12}>
         <CommentList comments={review.comments} />
       </Grid>
-      <Grid style={{ border: "1px dotted #1a1a1a" }}>
+      <Grid item >
         <CommentForm reviewId={review._id} refetch={refetch} />
       </Grid>
     </Grid>

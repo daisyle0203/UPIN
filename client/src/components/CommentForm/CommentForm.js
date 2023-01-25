@@ -48,8 +48,7 @@ const CommentForm = ({ reviewId, refetch }) => {
   return (
     <>
       <CssBaseline />
-
-      <Card style={{ marginTop: "30px" }}>
+      <Card>
         <Typography variant="h6">
           What are your thoughts on this review?
         </Typography>

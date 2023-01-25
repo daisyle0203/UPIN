@@ -1,5 +1,6 @@
 import {
   Card,
+  CardContent,
   CardHeader,
   CssBaseline,
   Grid,
@@ -20,13 +21,13 @@ const CommentList = ({ comments = [] }) => {
         {comments &&
           comments.map((comment) => (
             <Grid item key={comment._id} xs={12}>
-              <Card variant="outline">
-                <CardHeader>
-                  {comment.commentAuthor} commented{" "}
+              <Card>
+                  <Typography variant="h7">
+                    {comment.commentAuthor} commented{" "}
+                  </Typography>
                   <Typography style={{ fontSize: "0.825rem" }}>
                     on {comment.createdAt}
                   </Typography>
-                </CardHeader>
                 <Typography paragraph>{comment.commentText}</Typography>
               </Card>
             </Grid>
