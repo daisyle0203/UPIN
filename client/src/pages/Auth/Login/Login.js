@@ -51,7 +51,7 @@ export default function LogIn() {
   return (
     <>
       <CssBaseline />
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" className={classes.container}>
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
