@@ -7,12 +7,22 @@
 - Throughout the process of working on this project, we all learned how to operate on Github within project repository, including creating & merging branches, navigating through pull requests, issues, and merge conflicts, and most importantly getting hands on experience working with other classmates, which helps all involved learn how to communicate and work collectively to accomplish a number of tasks.
 
 ## Table of Contents
-
+- [Badges](#badges)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Demo](#demo)
 - [Credits](#credits)
 - [License](#license)
+
+## Badges
+
+[![made-with-React](https://img.shields.io/badge/Made%20with-React-1f425f.svg)](https://www.javascript.com)
+[![Npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://https://npmjs.com/)
+[![macOS](https://svgshare.com/i/ZjP.svg)](https://svgshare.com/i/ZjP.svg)
+[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+![repo-size](https://img.shields.io/github/repo-size/daisyle0203/UPIN)
+![language](https://img.shields.io/github/languages/top/daisyle0203/UPIN)
+
 
 ## Installation
 
@@ -70,18 +80,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-GitHubGitHub
-twangerwang - Overview
-twangerwang has 23 repositories available. Follow their code on GitHub.
-GitHubGitHub
-daisyle0203 - Overview
-Full Stack Developer. daisyle0203 has 26 repositories available. Follow their code on GitHub.
-GitHubGitHub
-roodhouse - Overview
-roodhouse has 21 repositories available. Follow their code on GitHub.
-GitHubGitHub
-BrettE102 - Overview
-BrettE102 has 18 repositories available. Follow their code on GitHub.
-GitHubGitHub
-fightingwards - Overview
-fightingwards has 16 repositories available. Follow their code on GitHub.
+
+
