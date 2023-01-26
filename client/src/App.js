@@ -57,8 +57,8 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={darkTheme}>
-        <Header setMode={setMode} mode={mode} />
-        <Container>
+        <Header setMode={setMode} mode={mode} style={{height: "6vh"}}/>
+        <Container style={{minHeight: "79vh"}}>
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -71,7 +71,7 @@ function App() {
             </Routes>
           </Router>
         </Container>
-        <Footer />
+        <Footer style={{height: "15vh"}} />
       </ThemeProvider>
     </ApolloProvider>
   )

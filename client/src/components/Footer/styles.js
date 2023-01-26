@@ -6,7 +6,6 @@ export default makeStyles((theme) => ({
     padding: theme.spacing(3, 0),
     marginTop: theme.spacing(5),
     position: "absolute",
-    // bottom: 0,
     width: "100%",
   },
   links: {
