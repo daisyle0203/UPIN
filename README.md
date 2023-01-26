@@ -10,6 +10,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Demo](#demo)
 - [Credits](#credits)
 - [License](#license)
 
@@ -20,11 +21,9 @@
 
 ## Usage
 
-Below you will find a screenshot of the home page when you first load up. Once you have the home page pulled up,
-theres a login and a signup button that allows users to create/login to an account.
-Once signed in, the user will be able to create new posts and view other users posts.
+Below you will find a brief demonstration of how to use Re:view
 
-## Screenshot of homepage
+## Demo
 
 ![demo](img/Re_View.gif)
 
