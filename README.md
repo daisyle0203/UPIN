@@ -23,8 +23,13 @@
 Below you will find a brief demonstration of how to use Re:view
 
 ## Demo
-live url : (https://review-binary-beast.herokuapp.com/)
-![demo](img\Re_View.gif)
+
+![demo](img/Re_View.gif)
+
+## Deployed App
+
+https://review-binary-beast.herokuapp.com/
+
 ## Credits
 
 Collaborators:
