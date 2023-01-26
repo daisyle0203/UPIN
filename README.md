@@ -1,4 +1,4 @@
-# Project03
+# Re:View
 
 ## Description
 
@@ -20,12 +20,11 @@
 
 ## Usage
 
-Below you will find a screenshot of the home page you will see when you first load up. Once you have the home page pulled up,
-theres a login and a signup button that allows user to create/login to an account.
-once signed in, the user will be able to create new posts and view other users posts.
+Below you will find a brief demonstration of how to use Re:view
 
-## Screenshot of homepage
-
+## Demo
+live url : (https://review-binary-beast.herokuapp.com/)
+![demo](img\Re_View.gif)
 ## Credits
 
 Collaborators:
