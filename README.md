@@ -25,8 +25,13 @@ theres a login and a signup button that allows users to create/login to an accou
 Once signed in, the user will be able to create new posts and view other users posts.
 
 ## Screenshot of homepage
-live url : (https://review-binary-beast.herokuapp.com/)
-![homepage](img\homepage.PNG)
+
+![demo](img/Re_View.gif)
+
+## Deployed App
+
+https://review-binary-beast.herokuapp.com/
+
 ## Credits
 
 Collaborators:
