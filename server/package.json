@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon",
-    "seed": "node seeders/seeds.js"
+    "seed": "node seeders/seeds.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "mongoose": "^6.1.8"
   },
   "devDependencies": {
+    "jest": "^29.4.1",
     "nodemon": "^2.0.2"
   }
 }
