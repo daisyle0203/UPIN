@@ -58,14 +58,6 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          {data ? (
-            <Typography variant="body2">
-              Success! You may now head{" "}
-              <Link href="/login" variant="body2">
-                back to the homepage.
-              </Link>
-            </Typography>
-          ) : (
             <form
               className={classes.form}
               noValidate
@@ -128,7 +120,6 @@ export default function SignUp() {
                 </Grid>
               </Grid>
             </form>
-          )}
           {error && (
             <Typography variant="body2" className={classes.customError}>
               {error.message}
