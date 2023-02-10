@@ -1,9 +1,4 @@
-import {
-  Card,
-  CssBaseline,
-  Grid,
-  Typography,
-} from "@material-ui/core"
+import { Card, CssBaseline, Grid, Typography } from "@material-ui/core"
 import React from "react"
 
 const CommentList = ({ comments = [] }) => {
@@ -19,13 +14,13 @@ const CommentList = ({ comments = [] }) => {
         {comments &&
           comments.map((comment) => (
             <Grid item key={comment._id} xs={12}>
-              <Card>
-                  <Typography variant="h7">
-                    {comment.commentAuthor} commented{" "}
-                  </Typography>
-                  <Typography style={{ fontSize: "0.825rem" }}>
-                    on {comment.createdAt}
-                  </Typography>
+              <Card style={{ padding: "10px", marginTop: "5px" }}>
+                <Typography variant="h7">
+                  {comment.commentAuthor} commented{" "}
+                </Typography>
+                <Typography style={{ fontSize: "0.825rem" }}>
+                  on {comment.createdAt}
+                </Typography>
                 <Typography paragraph>{comment.commentText}</Typography>
               </Card>
             </Grid>
