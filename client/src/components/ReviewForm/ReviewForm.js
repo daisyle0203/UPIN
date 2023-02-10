@@ -25,16 +25,6 @@ const ReviewForm = ({ refetch }) => {
 
   const [addReview, { error }] = useMutation(ADD_REVIEW)
 
-  const handleClear = () => {
-    setForm({
-      company: "",
-      role: "",
-      interviewerInfo: "",
-      interviewExperience: "",
-      rating: 0,
-    })
-  }
-
   const handleChange = (event) => {
     setForm({
       ...form,
@@ -122,15 +112,6 @@ const ReviewForm = ({ refetch }) => {
               fullWidth
             >
               Submit
-            </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              size="large"
-              onClick={handleClear}
-              fullWidth
-            >
-              Clear
             </Button>
           </form>
           {error && (
