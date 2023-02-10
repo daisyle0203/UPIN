@@ -19,6 +19,7 @@ import Rating from "@material-ui/lab/Rating"
 import { red } from "@material-ui/core/colors"
 import { useMutation } from "@apollo/client"
 import { REMOVE_REVIEW } from "../../utils/mutations"
+import Auth from "../../utils/auth"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,14 +97,17 @@ const ReviewList = ({ refetch, reviews }) => {
                         }`
                       : "There is no comment yet. Be the first one to comment!"}
                   </Link>
-                  <Tooltip title="Delete">
-                    <IconButton
-                      aria-label="delete"
-                      onClick={() => handleDelete(review._id)}
-                    >
-                      <DeleteIcon />
-                    </IconButton>
-                  </Tooltip>
+                  {Auth.loggedIn() &&
+                    Auth.getProfile().data.username === review.reviewAuthor && (
+                      <Tooltip title="Delete">
+                        <IconButton
+                          aria-label="delete"
+                          onClick={() => handleDelete(review._id)}
+                        >
+                          <DeleteIcon />
+                        </IconButton>
+                      </Tooltip>
+                    )}
                 </CardActions>
               </Card>
               {error && (

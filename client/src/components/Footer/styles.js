@@ -5,8 +5,8 @@ export default makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.blue,
     padding: theme.spacing(3, 0),
     marginTop: theme.spacing(5),
-    position: "absolute",
-    width: "100%",
+    //position: "absolute",
+    //width: "100%",
   },
   links: {
     color: "white",

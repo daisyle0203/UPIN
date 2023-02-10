@@ -26,7 +26,7 @@ const ReviewForm = ({ refetch }) => {
   const [addReview, { error }] = useMutation(ADD_REVIEW)
 
   const handleClear = () => {
-    setForm({ 
+    setForm({
       company: "",
       role: "",
       interviewerInfo: "",

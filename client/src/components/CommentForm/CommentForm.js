@@ -48,40 +48,40 @@ const CommentForm = ({ reviewId, refetch }) => {
   return (
     <>
       <CssBaseline />
-      <Card>
-        <Typography variant="h6">
-          What are your thoughts on this review?
-        </Typography>
-      </Card>
+      <Typography variant="h6">
+        What are your thoughts on this review?
+      </Typography>
 
       {Auth.loggedIn() ? (
-        <Container component={Card} maxWidth="xs">
-          <Paper>
-            <form onSubmit={handleFormSubmit}>
-              <Grid container spacing={4}>
-                <Grid item xs={12}>
-                  <TextField
-                    name="commentText"
-                    placeholder="Add your comment..."
-                    value={commentText}
-                    variant="outlined"
-                    fullWidth
-                    onChange={handleChange}
-                  ></TextField>
-                </Grid>
-                <Grid item xs={12}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    size="small"
-                    type="submit"
-                  >
-                    Add Comment
-                  </Button>
-                </Grid>
+        <Container
+          component={Card}
+          maxWidth="xs"
+          style={{ padding: "20px", marginTop: "10px" }}
+        >
+          <form onSubmit={handleFormSubmit}>
+            <Grid container spacing={4}>
+              <Grid item xs={12}>
+                <TextField
+                  name="commentText"
+                  placeholder="Add your comment..."
+                  value={commentText}
+                  variant="outlined"
+                  fullWidth
+                  onChange={handleChange}
+                ></TextField>
               </Grid>
-            </form>
-          </Paper>
+              <Grid item xs={12}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="small"
+                  type="submit"
+                >
+                  Add Comment
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
         </Container>
       ) : (
         <Typography variant="h6">
@@ -90,6 +90,7 @@ const CommentForm = ({ reviewId, refetch }) => {
           <Link href="/signup">signup.</Link>
         </Typography>
       )}
+      {error && <Typography variant="body2">{error.message}</Typography>}
     </>
   )
 }
