@@ -35,7 +35,7 @@ Below you will find a brief demonstration of how to use Re:view
 
 ## Demo
 
-![demo](../UPIN/client/src/assets/img/Re_View.gif)
+![demo](/client/src/assets/img/Re_View.gif)
 
 ## Deployed App
 
