@@ -35,7 +35,7 @@ Below you will find a brief demonstration of how to use Re:view
 
 ## Demo
 
-![demo](img/Re_View.gif)
+![demo](../UPIN/client/src/assets/img/Re_View.gif)
 
 ## Deployed App
 
@@ -45,8 +45,8 @@ https://review-binary-beast.herokuapp.com/
 
 Collaborators:
 
-- Teddy Wang: (https://github.com/twangerwang)
 - Daisy Le: (https://github.com/daisyle0203)
+- Teddy Wang: (https://github.com/twangerwang)
 - John Rugh: (https://github.com/roodhouse)
 - Brett Elliott: (https://github.com/brette102)
 - Christian Hernandez: (https://github.com/fightingwards)
