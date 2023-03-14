@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import {
   ApolloClient,
   InMemoryCache,
@@ -41,6 +41,19 @@ const client = new ApolloClient({
 function App() {
   const [mode, setMode] = useState("light")
 
+  useEffect(() => {
+    const storedMode = localStorage.getItem("mode")
+    if (storedMode) {
+      setMode(storedMode)
+    }
+  }, [])
+
+  const toggleMode = () => {
+    const newMode = mode === "light" ? "dark" : "light"
+    setMode(newMode)
+    localStorage.setItem("mode", newMode)
+  }
+
   const darkTheme = createTheme({
     palette: {
       type: mode,
@@ -57,7 +70,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={darkTheme}>
-        <Header setMode={setMode} mode={mode} style={{height: "6vh"}}/>
+        <Header setMode={toggleMode} mode={mode} style={{height: "6vh"}}/>
         <Container style={{minHeight: "79vh"}}>
           <Router>
             <Routes>
